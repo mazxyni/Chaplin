@@ -1,9 +1,11 @@
-/*
+/* 일정계획 페이지 
 <지도>
+- 카카오 맵
+- 키워드 검색하면 그와 관련됨 목록이 뜨고 지도에 마킹됨 
 
 <일정계획 검색창>
 - 인풋창이 있고 버튼이 있음
-- 인풋창에 값을 입력하고 버튼을 클릭하면 입력 값이 콘솔에 보여짐
+- 인풋창에 값을 입력하고 버튼을 클릭
 
 <내 일정>
 - 일정 짜는 곳
@@ -14,22 +16,29 @@
 */
 
 import React from 'react'
+import KakaoMap from '../mobile_component/PlanPage/KakaoMap'; 
+import Plan from '../mobile_component/PlanPage/Schedule';
 
 function ScheduleAPlanPage() {
 
     return (
-        // 지도
-        <div className='Map'>
-
-            {/*검색창*/}
-            <div className='Search'>
-                <input type="text" />
-                <button>🔍</button>
+        <>
+            <KakaoMap />
+            <div className='PlanHeader'>
+                <div className='Back'> 뒤로 </div>
+                <div className='Calendar'>달력</div>
             </div>
-
+            {/*검색창*/}
+            
+            <input type="text" className='Search'></input>
+            <button className='SearchButton' onClick={() => {console.log('push')}}>🔍</button>
+            
+            
+            
+        
             {/*내 일정*/}
-
-        </div>
+            <Plan />
+        </>
     );
 }
 export default ScheduleAPlanPage;

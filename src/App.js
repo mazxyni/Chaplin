@@ -12,6 +12,10 @@ function App() {
       
       <BrowserView>
         웹 브라우저
+        <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='Plan' element={<ScheduleAPlanPage />} />
+        </Routes>
       </BrowserView>
 
       <MobileView>    
