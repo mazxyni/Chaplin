@@ -8,6 +8,7 @@ public class ChaplinApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ChaplinApplication.class, args);
+		System.out.println("test4");
 	}
 
 }
