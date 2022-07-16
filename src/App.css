@@ -35,12 +35,22 @@
   
 }
 
-.Search {
+.inputForm {
   width: 315px;
   height: 40px;
   position: absolute;
   top: 80px;
   left: 30px;
+  padding: 0px;
+  border: 0px;
+  outline: 2px solid black;
+  z-index: 1;
+}
+
+.Search {
+  width: 315px;
+  height: 40px;
+  position: relative;
   padding: 0px;
   border: 0px;
   outline: 2px solid black;
@@ -50,17 +60,16 @@
 .SearchButton {
   width: 30px;
   height: 40px;
-  position: absolute;
-  top: 80px;
-  left: 315px;
+  position: relative;
+  top: -40px;
+  left: 145px;
   background-color: white;
 
 
 }
 
-.Map {
-  width: 375px;
-  height: 815px;
+.myMap {
+  z-index: 0;
 }
 
 .MyPlan {
@@ -111,7 +120,5 @@
   position: relative;
   background-color: white;
 
-
 }
-
 

@@ -18,26 +18,28 @@
 import React from 'react'
 import KakaoMap from '../mobile_component/PlanPage/KakaoMap'; 
 import Plan from '../mobile_component/PlanPage/Schedule';
+import SearchPlace from '../mobile_component/PlanPage/Search';
+
 
 function ScheduleAPlanPage() {
 
     return (
         <>
-            <KakaoMap />
+            {/*검색창*/}
+            <SearchPlace />
+            
             <div className='PlanHeader'>
                 <div className='Back'> 뒤로 </div>
                 <div className='Calendar'>달력</div>
             </div>
-            {/*검색창*/}
-            
-            <input type="text" className='Search'></input>
-            <button className='SearchButton' onClick={() => {console.log('push')}}>🔍</button>
+
             
             
             
-        
+            
             {/*내 일정*/}
             <Plan />
+            
         </>
     );
 }
