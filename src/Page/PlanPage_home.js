@@ -16,7 +16,6 @@
 */
 
 import React from 'react'
-import KakaoMap from '../mobile_component/PlanPage/KakaoMap'; 
 import Plan from '../mobile_component/PlanPage/Schedule';
 import SearchPlace from '../mobile_component/PlanPage/Search';
 
@@ -24,23 +23,20 @@ import SearchPlace from '../mobile_component/PlanPage/Search';
 function ScheduleAPlanPage() {
 
     return (
-        <>
+        <div className='PlanPage'>
             {/*검색창*/}
             <SearchPlace />
-            
+
+            {/* 일정 계획 페이지 헤더 */}
             <div className='PlanHeader'>
                 <div className='Back'> 뒤로 </div>
                 <div className='Calendar'>달력</div>
             </div>
-
-            
-            
-            
-            
+        
             {/*내 일정*/}
             <Plan />
             
-        </>
+        </div>
     );
 }
 export default ScheduleAPlanPage;

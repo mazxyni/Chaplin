@@ -1,3 +1,5 @@
+// 지도 검색 및 마킹, 목록
+
 import React, { useState } from 'react'
 import KakaoMap from './KakaoMap';
 
@@ -7,14 +9,13 @@ function SearchPlace() {
 
     const onChange = (e) => {
         setInputText(e.target.value);
-        
         //console.log(InputText);
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setPlace(InputText);
-        setInputText('');
+        //setInputText('');
         
     }
     
@@ -25,7 +26,7 @@ function SearchPlace() {
         <form className="inputForm" onSubmit={ handleSubmit }>
             <input type="text" placeholder="검색어를 입력하세요." onChange={onChange} value={InputText} className='Search'></input>
             <button type='submit' className='SearchButton' >🔍</button>
-            <h4>{console.log(InputText, '/'+Place+'/')}</h4>
+            {/* <h4>{console.log(InputText, '/'+Place+'/')}</h4> */}
         </form>
         <KakaoMap searchPlace={Place} /> 
         </>

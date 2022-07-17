@@ -19,7 +19,6 @@ function App() {
       </BrowserView>
 
       <MobileView>    
-          
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='Plan' element={<ScheduleAPlanPage />} />

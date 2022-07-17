@@ -72,6 +72,13 @@
   z-index: 0;
 }
 
+.result-list {
+  width: 227px;
+  height: 60px;
+  background-color: #fff;
+  margin-right: 15px;
+}
+
 .MyPlan {
   width: 315px;
   height: 175px;
