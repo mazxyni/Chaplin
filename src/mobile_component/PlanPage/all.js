@@ -7,12 +7,27 @@ import SchedulePlace from './Schedule_place';
 const { kakao } = window;
 
 
-function KakaoMap({ searchPlace }) {
+function All() {
+    const [Place, setPlace] = useState(' ');
     const [Places, setPlaces] = useState([]) // 검색 결과 
     let [add, setAdd] = useState(false) // true일 때 일정표에 추가, false일 때 냅두기
     let [SchedulePlaces, setScheduelPlaces] = useState(0) // 검색 결과 값 위치, 기본값 0번째
     let [button, setButton] = useState(false); // true일 때 내 일정 열림 , false일 때 내 일정 닫힘
     let [addPlace, setAddPlace] = useState([]);
+
+    const [InputText, setInputText] = useState('');
+
+    const onChange = (e) => {
+        setInputText(e.target.value);
+        //console.log(InputText);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setPlace(InputText);
+        //setInputText('');
+        
+    }
 
     useEffect(() => {
         kakao.maps.load(() => {
@@ -31,7 +46,7 @@ function KakaoMap({ searchPlace }) {
             const ps = new kakao.maps.services.Places();
 
             // 키워드로 장소 검색
-            ps.keywordSearch(searchPlace, placesSearchCB);
+            ps.keywordSearch(Place, placesSearchCB);
 
             // 장소검색이 완료됐을 때 호출되는 콜백함수
             function placesSearchCB(data, status) {
@@ -71,9 +86,17 @@ function KakaoMap({ searchPlace }) {
 
         });
         
-    }, [searchPlace]);
+    }, [Place]);
 
     return (
+        <>
+        
+        <form className="inputForm" onSubmit={ handleSubmit }>
+            <input type="text" placeholder="검색어를 입력하세요." onChange={onChange} value={InputText} className='Search'></input>
+            <button type='submit' className='SearchButton' >🔍</button>
+            {/* <h4>{console.log(InputText, '/'+Place+'/')}</h4> */}
+        </form>
+        
         <div>
             
             {/* 지도 */}
@@ -133,8 +156,9 @@ function KakaoMap({ searchPlace }) {
             {(add == true) && (button == true)  ? (<SchedulePlace places={Places} SchedulePlace={SchedulePlaces} addPlace={addPlace} setAddPlace={setAddPlace}/>) : null}
             
         </div>
+        </>
         
     );
   
 }
-export default KakaoMap;
+export default All;

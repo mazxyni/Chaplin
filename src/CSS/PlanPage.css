@@ -1,0 +1,163 @@
+@import 'Reset.css';
+
+.PlanPage {
+    width: 100%;
+    height: 100%;
+}
+
+/* 일정계획 페이지 헤더 */
+.PlanHeader { 
+    width: 90%;
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+  }
+  
+  
+/* 뒤로가기 버튼 */
+.Back {
+    width: 40px;
+    height: 25px;
+    background-color: white; 
+}
+
+  
+/* 달력 */
+.Calendar {
+    width: 40px;
+    height: 25px;
+    background-color: white;  
+}
+
+  
+/* 검색창 */
+.inputForm {
+    width: 90%;
+    height: 40px;
+    position: absolute;
+    top: 80px;
+    left: 5%;
+    z-index: 1;
+    display: flex;
+    opacity: 90%;
+}
+
+/* 입력창 */
+.Search {
+    width: 90%;
+    border: 0px;
+    padding: 0px 0px 0px 5px; 
+}
+
+  
+/* 검색버튼 */
+.SearchButton {
+    width: 10%;
+    background-color: white;
+}
+  
+/* 검색결과 */
+.result {
+    width: 90%;
+    height: 60px;
+    position: absolute;
+    top: 140px;
+    left: 5%;
+    z-index: 1;
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+  
+  
+/* 검색결과 리스트 */
+.result-list {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    margin-right: 15px;
+    opacity: 80%;
+}
+  
+/* 일정표 */
+.MyPlan {
+    width: 90%;
+    height: 100px;
+    position: absolute;
+    left: 5%;
+    bottom: 95px;
+    opacity: 90%;
+  
+}
+  
+
+/* 일차 */
+.MyPlanDay {
+    height: 25px;
+    background-color: white;
+}
+
+
+/* 목적지 */
+.MyPlanPlace{
+    height: 60px;
+    margin-top: 15px;
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+}
+  
+
+/* 목적지 리스트 */
+.MyPlanPlace-list {
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    margin-right: 10px;
+}
+  
+  
+/* 내 일정 버튼 - 열기 */
+.MyPlanButtonOpen {
+    width: 90%;
+    height: 60px;
+    position: absolute;
+    bottom: 20px;
+    left: 5%;
+    background-color: white;
+}
+
+
+/* 일정표 열렸을 때 */
+.PlanOpenButton {
+    width: 90%;
+    height: 60px;
+    position: absolute;
+    bottom: 20px;
+    left: 5%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+/* 내 일정 버튼 - 닫기 */
+.MyPlanButtonClose {
+    width: 45%;
+    height: 60px;
+    background-color: white; 
+}
+
+
+/* 일정 저장 버튼 */
+.MyPlanSave {
+    width: 45%;
+    height: 60px;
+    background-color: #566AF0;
+  
+}
+  
+  
+  

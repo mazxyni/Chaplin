@@ -15,27 +15,27 @@
 - 내 일정 버튼 : 일정표 열고 닫기 가능
 */
 
-import React from 'react'
-import Plan from '../mobile_component/PlanPage/Schedule';
+import React, { useState } from 'react'
+import '../CSS/PlanPage.css';
 import SearchPlace from '../mobile_component/PlanPage/Search';
+import All from '../mobile_component/PlanPage/all';
 
 
 function ScheduleAPlanPage() {
 
     return (
         <div className='PlanPage'>
-            {/*검색창*/}
-            <SearchPlace />
 
             {/* 일정 계획 페이지 헤더 */}
             <div className='PlanHeader'>
                 <div className='Back'> 뒤로 </div>
                 <div className='Calendar'>달력</div>
             </div>
-        
-            {/*내 일정*/}
-            <Plan />
-            
+
+            {/*검색창*/}
+            {/* <SearchPlace /> */}
+            <All />
+
         </div>
     );
 }

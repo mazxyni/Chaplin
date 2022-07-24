@@ -1,4 +1,4 @@
-// 지도 검색 및 마킹, 목록
+// 지도 검색창
 
 import React, { useState } from 'react'
 import KakaoMap from './KakaoMap';
