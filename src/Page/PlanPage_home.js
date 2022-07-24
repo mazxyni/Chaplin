@@ -18,7 +18,6 @@
 import React, { useState } from 'react'
 import '../CSS/PlanPage.css';
 import SearchPlace from '../mobile_component/PlanPage/Search';
-import All from '../mobile_component/PlanPage/all';
 
 
 function ScheduleAPlanPage() {
@@ -33,8 +32,7 @@ function ScheduleAPlanPage() {
             </div>
 
             {/*검색창*/}
-            {/* <SearchPlace /> */}
-            <All />
+            <SearchPlace />
 
         </div>
     );

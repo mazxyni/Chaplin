@@ -89,11 +89,11 @@ function KakaoMap({ searchPlace }) {
                 {/* 검색 결과 리스트 */}
                 {Places.map((item, i) => (
                     <div key={i} className='result-list'>
-                        <div style={{display:'flex'}}>
+                        <div style={{display:'flex', margin:'5px'}}>
                             {/* 장소 이름 */}
-                            <h4 style={{margin:'5px'}}>{item.place_name}</h4>
+                            <h4 style={{marginRight:'15px', fontFamily:'Roboto Bold', fontWeight:'700'}}>{item.place_name}</h4>
                             {/* 장소 추가 버튼 */}
-                            <span style={{marginLeft : 'auto', padding:'0px 10px'}} onClick={() => {
+                            <span style={{marginLeft : 'auto'}} onClick={() => {
                                 setAdd(true); // 일정표에 추가
                                 setScheduelPlaces(i); // 검색결과 값 위치 넘겨주기
                                 setButton(true); // 일정표 열기
@@ -102,14 +102,14 @@ function KakaoMap({ searchPlace }) {
                                 // setAddPlace(copy); addPlace 변경
                                 setAddPlace(() => {return[...addPlace, item]})// 추가한 결과 배열에 넣기
                                 //console.log(addPlace);
-                                }}>+</span>
+                                }}>➕</span>
                         </div>
                         {/* 장소 주소 */}
-                        <div style={{fontSize:'12px'}}>
+                        <div style={{fontFamily:'Roboto Regular', fontWeight:'400', fontSize:'12px', margin:'10px 5px', textAlign:'left'}}>
                             {item.road_address_name ? (
-                            <p style={{margin:'5px'}}>{item.road_address_name}</p>
+                            <p>{item.road_address_name}</p>
                             ) : (
-                                <p style={{margin:'5px'}}>{item.address_name}</p>
+                                <p>{item.address_name}</p>
                             )} 
                         </div>   
                     </div>  

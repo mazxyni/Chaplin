@@ -25,7 +25,7 @@ function SearchPlace() {
         
         <form className="inputForm" onSubmit={ handleSubmit }>
             <input type="text" placeholder="검색어를 입력하세요." onChange={onChange} value={InputText} className='Search'></input>
-            <button type='submit' className='SearchButton' >🔍</button>
+            <button type='submit' className='SearchButton' >🔍{/*<img src="img/search.png" alt='search' />*/}</button>
             {/* <h4>{console.log(InputText, '/'+Place+'/')}</h4> */}
         </form>
         <KakaoMap searchPlace={Place} /> 
