@@ -1,7 +1,9 @@
 // 카카오 지도 
 /*global kakao */ 
 import React, { useEffect, useState } from 'react';
+import '../../CSS/PlanPage.css'
 import SchedulePlace from './Schedule_place';
+import {BsPlus} from 'react-icons/bs'
 
 
 const { kakao } = window;
@@ -79,10 +81,9 @@ function KakaoMap({ searchPlace }) {
             {/* 지도 */}
             <div id='myMap' style={{
                 width: '100%',
-                height:'100vh',
+                height: '100vh',
                 opacity: '99%'
-            }}>
-            </div>
+            }}></div>
 
             {/* 검색 결과 */}
             <div className='result'>
@@ -102,7 +103,7 @@ function KakaoMap({ searchPlace }) {
                                 // setAddPlace(copy); addPlace 변경
                                 setAddPlace(() => {return[...addPlace, item]})// 추가한 결과 배열에 넣기
                                 //console.log(addPlace);
-                                }}>➕</span>
+                                }}><BsPlus /></span>
                         </div>
                         {/* 장소 주소 */}
                         <div style={{fontFamily:'Roboto Regular', fontWeight:'400', fontSize:'12px', margin:'10px 5px', textAlign:'left'}}>

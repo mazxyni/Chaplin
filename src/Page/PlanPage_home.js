@@ -18,6 +18,9 @@
 import React, { useState } from 'react'
 import '../CSS/PlanPage.css';
 import SearchPlace from '../mobile_component/PlanPage/Search';
+import {FiCalendar} from 'react-icons/fi';
+import {MdOutlineEditCalendar} from 'react-icons/md'
+import {BiArrowBack} from 'react-icons/bi';
 
 
 function ScheduleAPlanPage() {
@@ -27,8 +30,8 @@ function ScheduleAPlanPage() {
 
             {/* 일정 계획 페이지 헤더 */}
             <div className='PlanHeader'>
-                <div className='Back'> 뒤로 </div>
-                <div className='Calendar'>달력</div>
+                <BiArrowBack className='Back' size={30}/>
+                <MdOutlineEditCalendar className='Schedule' size={30}/>
             </div>
 
             {/*검색창*/}

@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 import KakaoMap from './KakaoMap';
+import '../../CSS/PlanPage.css'
+import { FaSearch } from 'react-icons/fa';
 
 function SearchPlace() {
     const [InputText, setInputText] = useState('');
@@ -25,7 +27,7 @@ function SearchPlace() {
         
         <form className="inputForm" onSubmit={ handleSubmit }>
             <input type="text" placeholder="검색어를 입력하세요." onChange={onChange} value={InputText} className='Search'></input>
-            <button type='submit' className='SearchButton' >🔍{/*<img src="img/search.png" alt='search' />*/}</button>
+            <button type='submit' className='SearchButton' ><FaSearch /></button>
             {/* <h4>{console.log(InputText, '/'+Place+'/')}</h4> */}
         </form>
         <KakaoMap searchPlace={Place} /> 
