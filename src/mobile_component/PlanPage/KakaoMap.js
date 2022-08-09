@@ -17,10 +17,10 @@ function KakaoMap({ searchPlace }) {
     let [button, setButton] = useState(false); // true일 때 내 일정 열림 , false일 때 내 일정 닫힘
     let [addPlace, setAddPlace] = useState([]);
 
-    const startDate = useSelector((state) => state.startDate)
-    const endDate = useSelector((state) => state.endDate)
+    //const startDate = useSelector((state) => state.startDate)
+    //const endDate = useSelector((state) => state.endDate)
     
-    console.log('맵' + startDate, endDate)
+    //console.log('맵' + startDate, endDate)
 
     useEffect(() => {
         kakao.maps.load(() => {
@@ -124,7 +124,7 @@ function KakaoMap({ searchPlace }) {
 
             </div>
 
-            <div style={{position:'absolute', zIndex:'1', width:'100px', height:'100px', top:'200px', backgroundColor:'white'}}>{startDate}</div>
+            {/* <div style={{position:'absolute', zIndex:'1', width:'100px', height:'100px', top:'200px', backgroundColor:'white'}}>{startDate}</div> */}
             
             {/* 내 일정 열기 버튼 */}
             {!button && (<div className='MyPlanButtonOpen' onClick={() => {
