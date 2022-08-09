@@ -21,6 +21,7 @@ import SearchPlace from '../mobile_component/PlanPage/Search';
 import {FiCalendar} from 'react-icons/fi';
 import {MdOutlineEditCalendar} from 'react-icons/md'
 import {BiArrowBack} from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 
 function ScheduleAPlanPage() {

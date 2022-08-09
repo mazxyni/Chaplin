@@ -187,5 +187,79 @@
   
 }
   
+
+/* 지역 선택 페이지 */
+
+.Region{
+    position: absolute;
+    width: 175px;
+    height: 19px;
+    left: 100px;
+    top: 150px;
+}
+
+.SelectDiv {
+    position: absolute;
+    width: 315px;
+    height: 586px;
+    left: 30px;
+    top: 196px;
+    background-color: #F8F9FE;
+
+}
+
+.RegionDropDown {
+    margin: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+}
   
+.SelectButton-Region {
+    width: 30%;
+    height: 40px;
+    margin: 410px 0px 40px 108px;
+    color: #fff;
+    background-color: #566AF0;
+
+}
+
+.Date{
+    position: absolute;
+    width: 175px;
+    height: 19px;
+    left: 100px;
+    top: 150px;
+}
+
+.react-datepicker {
+    border: transparent;
+    background-color: transparent;
+    
+  }
+  
+
+.react-datepicker__header {
+    background-color:transparent;
+    border: transparent;
+  }
+  
+  .react-datepicker__close-icon::after {
+    position: fixed;
+    right: 870px;
+    top: 110px;
+    width: 10px;
+    height: 10px;
+    font-size: 10px;
+    background-color: #a3a2a2;
+  }
+  
+.SelectButton-Date {
+    width: 30%;
+    height: 40px;
+    margin: 200px 0px 40px 108px;
+    color: #fff;
+    background-color: #566AF0;
+
+}
+ 
   

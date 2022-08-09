@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import '../../CSS/PlanPage.css'
 import SchedulePlace from './Schedule_place';
 import {BsPlus} from 'react-icons/bs'
+import { useDispatch, useSelector } from 'react-redux';
 
 
 const { kakao } = window;
@@ -15,6 +16,11 @@ function KakaoMap({ searchPlace }) {
     let [SchedulePlaces, setScheduelPlaces] = useState(0) // 검색 결과 값 위치, 기본값 0번째
     let [button, setButton] = useState(false); // true일 때 내 일정 열림 , false일 때 내 일정 닫힘
     let [addPlace, setAddPlace] = useState([]);
+
+    const startDate = useSelector((state) => state.startDate)
+    const endDate = useSelector((state) => state.endDate)
+    
+    console.log('맵' + startDate, endDate)
 
     useEffect(() => {
         kakao.maps.load(() => {
@@ -118,6 +124,8 @@ function KakaoMap({ searchPlace }) {
 
             </div>
 
+            <div style={{position:'absolute', zIndex:'1', width:'100px', height:'100px', top:'200px', backgroundColor:'white'}}>{startDate}</div>
+            
             {/* 내 일정 열기 버튼 */}
             {!button && (<div className='MyPlanButtonOpen' onClick={() => {
                 setButton(true)

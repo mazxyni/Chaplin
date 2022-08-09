@@ -6,7 +6,7 @@ function Main() {
     return(
         <div>
             <h1>메인 페이지</h1>
-            <Link to='/Plan'>일정계획</Link>
+            <Link to='/SelectRegion'>일정계획</Link>
         </div>
     );
 }
