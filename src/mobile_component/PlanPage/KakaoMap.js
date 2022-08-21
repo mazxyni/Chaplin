@@ -2,9 +2,10 @@
 /*global kakao */ 
 import React, { useEffect, useState } from 'react';
 import '../../CSS/PlanPage.css'
-import SchedulePlace from './Schedule_place';
 import {BsPlus} from 'react-icons/bs'
+import {BiMinus} from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
+import { setChosenPlace } from '../../store';
 
 
 const { kakao } = window;
@@ -13,14 +14,16 @@ const { kakao } = window;
 function KakaoMap({ searchPlace }) {
     const [Places, setPlaces] = useState([]) // 검색 결과 
     let [add, setAdd] = useState(false) // true일 때 일정표에 추가, false일 때 냅두기
-    let [SchedulePlaces, setScheduelPlaces] = useState(0) // 검색 결과 값 위치, 기본값 0번째
-    let [button, setButton] = useState(false); // true일 때 내 일정 열림 , false일 때 내 일정 닫힘
-    let [addPlace, setAddPlace] = useState([]);
-
-    //const startDate = useSelector((state) => state.startDate)
-    //const endDate = useSelector((state) => state.endDate)
+    let [button, setButton] = useState(true); // true일 때 내 일정 열림 , false일 때 내 일정 닫힘
+    let [addPlace, setAddPlace] = useState([]); // 일정표 목적지 배열, {num : DayButton(일차), place: 목적지}  
+    let [DayButton, setDayButton] = useState(0); // 일차 배열 값 위치, 기본값 0번째
     
-    //console.log('맵' + startDate, endDate)
+    
+    const dispatch = useDispatch()
+    const chosenDateArray = useSelector((state) => state.chosenDateArray) // 일차 배열
+    
+    //console.log('맵' + chosenStartDate, chosenEndDate)
+
 
     useEffect(() => {
         kakao.maps.load(() => {
@@ -91,6 +94,8 @@ function KakaoMap({ searchPlace }) {
                 opacity: '99%'
             }}></div>
 
+            
+
             {/* 검색 결과 */}
             <div className='result'>
                 {/* 검색 결과 리스트 */}
@@ -102,13 +107,12 @@ function KakaoMap({ searchPlace }) {
                             {/* 장소 추가 버튼 */}
                             <span style={{marginLeft : 'auto'}} onClick={() => {
                                 setAdd(true); // 일정표에 추가
-                                setScheduelPlaces(i); // 검색결과 값 위치 넘겨주기
                                 setButton(true); // 일정표 열기
                                 // let copy = [...addPlace]; addPlace배열 카피본 만들기
                                 // copy.push(item); 선택한 item 배열에 넣기
                                 // setAddPlace(copy); addPlace 변경
-                                setAddPlace(() => {return[...addPlace, item]})// 추가한 결과 배열에 넣기
-                                //console.log(addPlace);
+                                setAddPlace(() => {return[...addPlace, {num: DayButton, place: item}]})// 추가한 결과 배열에 넣기
+                                // console.log(addPlace);
                                 }}><BsPlus /></span>
                         </div>
                         {/* 장소 주소 */}
@@ -118,13 +122,46 @@ function KakaoMap({ searchPlace }) {
                             ) : (
                                 <p>{item.address_name}</p>
                             )} 
-                        </div>   
-                    </div>  
+                        </div> 
+                    </div>    
                 ))}
+                
+            </div>
+            
+            
+            {/* 일정표 */}
+            <div className='MyPlan'>
 
+                {/*일차*/}
+                {button == true ? (<div className='MyPlanDay'> 
+                    {chosenDateArray.map((item, i) => (
+                    <div key={i} className='MyPlanDay-list' onClick={() => {setDayButton(i); console.log(i)}}>Day {i + 1}</div>))} 
+                </div>) : (null)}
+
+                {/* 일정 */}
+                {(add == true) && (button == true)  ? (<div className='MyPlanPlace'>
+
+                    {addPlace.filter(addPlace => addPlace.num == DayButton).map((item, i) => (<div key={i} className='MyPlanPlace-list'>
+                        <div style={{display:'flex', margin:'5px'}}>
+                            <h4 style={{marginRight:'15px', fontFamily:'Roboto Bold', fontWeight:'700'}}>{item.place.place_name}</h4>
+                            <span style={{marginLeft : 'auto'}} onClick={() => {
+                                let copy = [...addPlace]; // addPlace배열 카피본 만들기
+                                copy.splice(i,1); // 선택한 i번째 목적지 삭제하기
+                                setAddPlace(copy); // addPlace 변경
+                                //console.log(props.addPlace)
+                            }}><BiMinus /></span>
+                        </div>
+                        <div style={{fontFamily:'Roboto Regular', fontWeight:'400', fontSize:'13px', margin:'10px 5px', textAlign:'left'}}>
+                            {item.place.road_address_name ? (
+                            <p >{item.place.road_address_name}</p>
+                            ) : (
+                            <p >{item.place.address_name}</p>
+                            )}
+                        </div>
+                    </div>))}
+                </div>) : (null)}  
             </div>
 
-            {/* <div style={{position:'absolute', zIndex:'1', width:'100px', height:'100px', top:'200px', backgroundColor:'white'}}>{startDate}</div> */}
             
             {/* 내 일정 열기 버튼 */}
             {!button && (<div className='MyPlanButtonOpen' onClick={() => {
@@ -133,13 +170,11 @@ function KakaoMap({ searchPlace }) {
 
             {button &&( <div className='PlanOpenButton'>
                 {/*일정 저장 버튼*/}
-                <div className='MyPlanSave'>일정 저장</div> 
+                <div className='MyPlanSave' onClick={() =>{dispatch(setChosenPlace(addPlace))}}>일정 저장</div> 
 
                 {/*내 일정 닫기 버튼*/}
                 <div className='MyPlanButtonClose' onClick={() => {setButton(false)}} >내 일정</div>
             </div>)}
-
-            {(add == true) && (button == true)  ? (<SchedulePlace places={Places} SchedulePlace={SchedulePlaces} addPlace={addPlace} setAddPlace={setAddPlace}/>) : null}
             
         </div>
         

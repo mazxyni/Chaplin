@@ -41,6 +41,25 @@
      
 }
 
+/* 스케줄 모달창 */
+.ChosenSchedule {
+    position: absolute;
+    width: 314px;
+    height: 177px;
+    left: 15px;
+    top: 333px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.ChosenRegion{
+    margin-top: 50px;
+}
+
+.ChosenDate{
+    margin-top: 30px;
+}
+
   
 /* 검색창 */
 .inputForm {
@@ -109,12 +128,25 @@
 
 /* 일차 */
 .MyPlanDay {
+    width: 50%;
     height: 25px;
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
     font-family: "Roboto Bold";
     font-weight: 700;
     font-size: 14px;
     line-height: 25px;
-    background-color: white;
+    z-index: 1;
+}
+    
+
+.MyPlanDay-list{
+    width: 50%;
+    height: 25px;
+    margin-right: 10px;
+    padding: 0px;
+    background-color: #fff;
 }
 
 
