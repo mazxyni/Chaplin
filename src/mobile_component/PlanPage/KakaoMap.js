@@ -21,6 +21,8 @@ function KakaoMap({ searchPlace }) {
     
     const dispatch = useDispatch()
     const chosenDateArray = useSelector((state) => state.chosenDateArray) // 일차 배열
+    const chosenMetro = useSelector((state) => state.region.Metro)
+    const chosenCity = useSelector((state) => state.region.City)
     
     //console.log('맵' + chosenStartDate, chosenEndDate)
 
@@ -32,6 +34,9 @@ function KakaoMap({ searchPlace }) {
             const container = document.getElementById('myMap');
             const options = {
                 center: new kakao.maps.LatLng(33.450701, 126.570667),
+                // chosenMetro == '전체' ?  (new kakao.maps.LatLng(33.450701, 126.570667)) : (
+                //     chosenCity == '전체' ? (new kakao.maps.LatLng(37.469221, 126.573234)) : (new kakao.maps.LatLng(35.798838, 128.583052))
+                // ),
                 level: 3,
             };
         
@@ -48,6 +53,7 @@ function KakaoMap({ searchPlace }) {
             function placesSearchCB(data, status) {
                 if (status === kakao.maps.services.Status.OK) {
                 let bounds = new kakao.maps.LatLngBounds();
+               
         
                 for (let i = 0; i < data.length; i++) {
                     displayMarker(data[i]);
