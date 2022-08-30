@@ -47,7 +47,8 @@ function KakaoMap({ searchPlace }) {
             const ps = new kakao.maps.services.Places();
 
             // 키워드로 장소 검색
-            ps.keywordSearch(searchPlace, placesSearchCB);
+            ps.keywordSearch(chosenMetro == '전체' ?  (searchPlace) : (
+                chosenCity == '전체' ? (chosenMetro + searchPlace) : (chosenMetro + chosenCity + searchPlace)), placesSearchCB);
 
             // 장소검색이 완료됐을 때 호출되는 콜백함수
             function placesSearchCB(data, status) {
