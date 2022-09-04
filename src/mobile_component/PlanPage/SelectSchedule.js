@@ -12,7 +12,9 @@ function SelectSchedule() {
 
     return (
         <div className="ChosenSchedule">
-            <div className="ChosenRegion"> {chosenMetro} {chosenCity} </div>
+            <div className="ChosenRegion"> 
+            {chosenMetro=='전체' ? (<>{chosenMetro}</>) : (<>{chosenMetro} {chosenCity}</>) }
+            </div>
             <Link to={'/SelectDate'}>
                 <div className="ChosenDate"> {chosenStartDate} ~ {chosenEndDate}</div>
             </Link>
