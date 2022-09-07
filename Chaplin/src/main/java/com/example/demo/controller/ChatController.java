@@ -1,4 +1,4 @@
-package controller;
+package com.example.demo.controller;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.json.simple.JSONArray;

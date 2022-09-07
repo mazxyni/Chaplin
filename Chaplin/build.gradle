@@ -13,7 +13,6 @@ repositories {
 }
 
 dependencies {
-<<<<<<< HEAD
 	implementation 'mysql:mysql-connector-java'    
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -29,15 +28,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	// https://mvnrepository.com/artifact/org.json/json
 	implementation group: 'org.json', name: 'json', version: '20220320'
-	
-=======
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
->>>>>>> refs/remotes/origin/Backend
 }
 
 tasks.named('test') {
