@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/22_hf149.iml" filepath="$PROJECT_DIR$/.idea/22_hf149.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chaplin.iml" filepath="$PROJECT_DIR$/.idea/modules/Chaplin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chaplin.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Chaplin.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chaplin.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Chaplin.test.iml" />
     </modules>
   </component>
 </project>
