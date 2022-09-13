@@ -24,6 +24,12 @@ dependencies {
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
+	//lombok 라이브러리 추가
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+
 	// https://mvnrepository.com/artifact/org.apache.clerezza.ext/org.json.simple
 	implementation group: 'org.apache.clerezza.ext', name: 'org.json.simple', version: '0.4'
 	// https://mvnrepository.com/artifact/org.springframework/spring-test

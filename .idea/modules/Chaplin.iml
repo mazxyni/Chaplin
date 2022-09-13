@@ -5,6 +5,10 @@
     <content url="file://$MODULE_DIR$/../../Chaplin">
       <excludeFolder url="file://$MODULE_DIR$/../../Chaplin/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../Chaplin/build" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../Chaplin">
+      <excludeFolder url="file://$MODULE_DIR$/../../Chaplin/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../Chaplin/build" />
       <excludeFolder url="file://$MODULE_DIR$/../../Chaplin/out" />
     </content>
     <orderEntry type="inheritedJdk" />
