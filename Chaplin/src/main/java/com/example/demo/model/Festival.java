@@ -30,6 +30,9 @@ public class Festival {
     @Column(name="fes_s_dd")
     private Date fesSDd;
 
+    @Column(name="fes_e_dd")
+    private Date fesEDd;
+
     @Column(name="fes_hh")
     private String fesHh;
 
