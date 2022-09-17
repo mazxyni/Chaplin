@@ -30,6 +30,9 @@ public class User {
     @Column(name="usr_nm")
     private String usrNm;
 
+    @Column(name="usr_gn")
+    private String usrGn;
+
     @Column(name="usr_em")
     private String usrEm;
 
