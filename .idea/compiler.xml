@@ -11,10 +11,5 @@
         <module name="Chaplin.test" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Chaplin" target="11" />
-      <module name="Chaplin.main" target="11" />
-      <module name="Chaplin.test" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>

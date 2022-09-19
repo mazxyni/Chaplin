@@ -8,6 +8,8 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/Chaplin" />
+        <option name="gradleHome" value="C:/gradle/gradle-7.4.2-all/gradle-7.4.2" />
+        <option name="gradleJvm" value="15" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/Chaplin" />
