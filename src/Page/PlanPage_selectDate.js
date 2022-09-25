@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import dayjs from 'dayjs';
 import { ko } from "date-fns/esm/locale";
 import { setChosenStartDate, setChosenEndDate, setChosenDateArray} from '../store.js'
+import { Mobile } from '../Responsive';
 
 
 
@@ -15,6 +16,7 @@ function SelectDate () {
     const [startDate, setStartDate] = useState(new Date()); // 시작 날짜
     const [endDate, setEndDate] = useState(new Date()); // 종료 날짜
     const DateArray = []; // 일차 배열
+    const DATE_FORMAT_CALENDAR ='yyyy년 MM월'
     
     const dispatch = useDispatch()
 
@@ -32,8 +34,8 @@ function SelectDate () {
     const onChange = (dates) => {
       const [start, end] = dates;
       
-      setStartDate(start);
-      setEndDate(end);
+      setStartDate(start); // strtDate를 start로 변경
+      setEndDate(end); // endDate를 end로 변경
       //console.log(dates)
       //console.log(setStartDate(dayjs(start).format('YYYYMMDD')))
       //console.log(setEndDate(dayjs(end).format('YYYYMMDD')));
@@ -44,18 +46,27 @@ function SelectDate () {
     // 일차 배열 
     function DayArray() {
 
-        console.log(startDate, endDate);
+        //console.log(startDate, endDate);
+
+        // 첫 날짜부터 끝 날짜 동안 while문 실행
         while(startDate <= endDate) {
+
+
             let offset = startDate.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
             let dateOffset = new Date(startDate.getTime() - offset);
             //console.log(dateOffset.toISOString())
+
+            // 일차 배열에 날짜 넣기
             DateArray.push(dateOffset.toISOString().split('T')[0]);
             //console.log(DateArray);
+            //console.log(startDate);
+
+            // 날짜 +1
             startDate.setDate(startDate.getDate() + 1);
             //console.log(startDate);
         }
 
-        return dispatch(setChosenDateArray(DateArray));
+        return dispatch(setChosenDateArray(DateArray));  
     }
     
 
@@ -65,6 +76,7 @@ function SelectDate () {
 
     return(
         <div>
+            <Mobile>
             {/* 헤더 */}
             <Header />
             {/* 여행 날짜 선택 */}
@@ -73,13 +85,16 @@ function SelectDate () {
                 <div className='SelectDiv'> 
                     <DatePicker
                     locale={ko} // 한국어
+                    dateFormatCalendar={DATE_FORMAT_CALENDAR}
                     minDate={new Date()} //현재시점의 이전 달 비활성화
-                    selected={startDate}
-                    onChange={onChange}
-                    startDate={startDate}
-                    endDate={endDate}
+                    selected={startDate} // 초기 선택되어 있는 날짜는 현재 날짜로
+                    onChange={onChange} // 날짜 선택하기
+                    startDate={startDate} // 첫 날짜
+                    endDate={endDate} // 끝 날짜
                     selectsRange
                     inline
+                    disabledKeyboardNavigation
+                    
                     />
                     
                     
@@ -90,6 +105,7 @@ function SelectDate () {
 
                 
             </>
+            </Mobile>
         </div>
     );
 }

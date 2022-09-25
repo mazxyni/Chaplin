@@ -44,16 +44,18 @@
 /* 스케줄 모달창 */
 .ChosenSchedule {
     position: absolute;
-    width: 314px;
-    height: 177px;
-    left: 15px;
-    top: 333px;
+    width: 84%;
+    height: 180px;
+    left: 8%;
+    top: 330px;
     background-color: #fff;
     z-index: 1;
 }
 
+
 .ChosenRegion{
     margin-top: 50px;
+    text-align: center;
 }
 
 .ChosenDate{
@@ -224,58 +226,156 @@
 
 .Region{
     position: absolute;
-    width: 175px;
+    width: 100%;
     height: 19px;
-    left: 100px;
+    line-height: 19px;
     top: 150px;
+    color: #C1C1C1;
+    text-align: center;
 }
 
 .SelectDiv {
     position: absolute;
-    width: 315px;
-    height: 586px;
-    left: 30px;
-    top: 196px;
+    width: 84%;
+    height: 72%;
+    left: 8%;
+    bottom: 30px;
     background-color: #F8F9FE;
 
 }
 
 .RegionDropDown {
-    margin: 30px 60px;
+    margin: 30px ;
     display: flex;
     justify-content: space-between;
 }
+
+.metropolitan {
+    margin-top: 20px;
+    width: 110px;
+    background: #fff;
+  }
+
+.city {
+    margin-top: 20px;
+    width: 110px;
+    background: #fff;
+}
+  
+.selected {
+    display: flex;
+    height: 20px;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+  
+.selected-value {
+    max-width: 90px;
+}
+  
+.value {
+    width: 110px;
+    height: 300px;
+    background: #fff;
+    position: absolute;
+    overflow: auto;
+}
+  
+.value li {
+    padding: 5px 10px;
+    text-align: left;
+}
+
   
 .SelectButton-Region {
+    position: absolute;
     width: 30%;
     height: 40px;
-    margin: 410px 0px 40px 108px;
+    bottom: 24px;
+    left: 34%;
     color: #fff;
     background-color: #566AF0;
 
 }
 
+
+
+
+/* 날짜 선택 페이지 */
 .Date{
     position: absolute;
-    width: 175px;
+    width: 100%;
     height: 19px;
-    left: 100px;
+    line-height: 19px;
     top: 150px;
+    color: #C1C1C1;
+    text-align: center;
+}
+
+.react-datepicker__triangle {
+    display: none;
 }
 
 .react-datepicker {
-    border: transparent;
-    background-color: transparent;
-    
-  }
+    width: 90%;
+    background-color:transparent !important;
+    border: none !important;
+}
+
+.react-datepicker__month-container {
+    float: none !important;
+}
   
 
 .react-datepicker__header {
-    background-color:transparent;
-    border: transparent;
-  }
+    background-color:transparent !important;
+    border: none !important;
+}
+
+.react-datepicker__navigation {
+    margin-top: 47px
+}
+
+.react-datepicker__current-month{
+    margin-top: 40px !important;
+    margin-bottom: 50px;
+    font-size: 16px !important;
+    text-align: center;
+}
+
+.react-datepicker__day-names {
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.react-datepicker__day-name {
+    margin: 0px;
+}
+
+.react-datepicker__month {
+    margin: 0px !important;
+}
+.react-datepicker__week {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range
+, .react-datepicker__day--in-range, .react-datepicker__month-text--selected
+, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range
+, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range
+, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range
+, .react-datepicker__year-text--in-range, .react-datepicker__day--keyboard-selected {
+    border-radius: 50% !important ;
+    background-color: #D8E0FA !important;
+    color: #000 !important;
+}
+
   
-  .react-datepicker__close-icon::after {
+.react-datepicker__close-icon::after {
     position: fixed;
     right: 870px;
     top: 110px;
@@ -284,13 +384,19 @@
     font-size: 10px;
     background-color: #a3a2a2;
   }
+
+
+
   
 .SelectButton-Date {
+    position: absolute;
     width: 30%;
     height: 40px;
-    margin: 200px 0px 40px 108px;
+    bottom: 24px;
+    left: 34%;
     color: #fff;
     background-color: #566AF0;
+    
 
 }
  
@@ -301,48 +407,8 @@
 
 
 
-.metropolitan {
-    width: 110px;
-    border: 1px solid #999;
-    background: #fff;
-  }
 
-.city {
-    width: 110px;
-    border: 1px solid #999;
-    background: #fff;
-}
-  
-  .selected {
-    display: flex;
-    height: 20px;
-    justify-content: space-between;
-    padding: 5px 10px;
-  }
-  
-  .selected-value {
-    max-width: 90px;
-  }
-  
-  .value {
-    width: 110px;
-    height: 300px;
-    background: #fff;
-    border: 1px solid #999;
-    position: absolute;
-    border-top: none;
-    margin: 1px 0 0 -1px;
-    cursor: pointer;
-    overflow: auto;
-  }
-  
-  .value li {
-    padding: 5px 10px;
-    text-align: left;
-  }
 
-  /* .value li:hover {
-    background: rgba(168, 156, 235, 0.35)
-  } */
+  
 
   

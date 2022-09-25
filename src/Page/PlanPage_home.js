@@ -30,6 +30,7 @@ import {BiArrowBack} from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {setChosenDateArray} from '../store.js';
+import { Mobile } from '../Responsive';
 
 
 
@@ -42,7 +43,7 @@ function ScheduleAPlanPage() {
 
     return (
         <div className='PlanPage'>
-
+        <Mobile>
             {/* 일정 계획 페이지 헤더 */}
             <div className='PlanHeader'>
                 <BiArrowBack className='Back' size={30}/>
@@ -54,7 +55,7 @@ function ScheduleAPlanPage() {
             
             {/*검색창*/}
             <SearchPlace />
-
+        </Mobile>
         </div>
     );
 }

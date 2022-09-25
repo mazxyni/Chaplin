@@ -6,6 +6,7 @@ import {BsPlus} from 'react-icons/bs'
 import {BiMinus} from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { setChosenPlace } from '../../store';
+import { Mobile } from '../../Responsive';
 
 
 const { kakao } = window;
@@ -25,7 +26,7 @@ function KakaoMap({ searchPlace }) {
     const chosenCity = useSelector((state) => state.region.City)
     
     //console.log('맵' + chosenStartDate, chosenEndDate)
-
+    //console.log(chosenDateArray)
 
     useEffect(() => {
         kakao.maps.load(() => {
@@ -182,7 +183,6 @@ function KakaoMap({ searchPlace }) {
                 {/*내 일정 닫기 버튼*/}
                 <div className='MyPlanButtonClose' onClick={() => {setButton(false)}} >내 일정</div>
             </div>)}
-            
         </div>
         
     );

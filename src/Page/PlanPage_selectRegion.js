@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Pc, Mobile } from "../Responsive.js"
 import { Link } from 'react-router-dom';
 import '../CSS/PlanPage.css';
 import Header from '../mobile_component/Header';
@@ -39,6 +40,7 @@ function SelectRegion () {
     
     return(
         <div>
+            <Mobile>
             {/* 헤더 */}
             <Header />
             {/* 여행 지역 선택 */}
@@ -49,9 +51,9 @@ function SelectRegion () {
                 <div className='SelectDiv'>
                     <div className='RegionDropDown'>
                         <div className='Metropolitan'>
-                            <p>시·도</p>
+                            <p style={{fontWeight:'700',fontSize:'14px',textAlign:'center'}}>시·도</p>
                             <div className='metropolitan'>
-                                <div className='selected'  onClick = {() => {setMetroButton(!metroButton)}}>
+                                <div className='selected'  onClick = {() => {setMetroButton(!metroButton); setCityButton(false);}}>
                                     <div className='selected-value'>{selected.Metro}</div>
                                     <div style={{margin:'1px'}}><IoIosArrowDown size={18}/></div>
                                 </div>
@@ -70,9 +72,9 @@ function SelectRegion () {
                             </select> */}
                         </div>
                         <div className='City'>
-                            <p>시군구</p>
+                            <p style={{fontWeight:'700',fontSize:'14px',textAlign:'center'}}>시군구</p>
                             <div className='city'>
-                                <div className='selected'  onClick = {() => {setCityButton(!cityButton)}}>
+                                <div className='selected'  onClick = {() => {setCityButton(!cityButton); setMetroButton(false);}}>
                                     <div className='selected-value'>{selected.City}</div>
                                     <div style={{margin:'1px'}}><IoIosArrowDown size={18}/></div>
                                 </div>
@@ -106,6 +108,7 @@ function SelectRegion () {
                     </Link>
                 </div>
             </>
+            </Mobile>
         </div>
     );
 }

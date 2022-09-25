@@ -1,7 +1,7 @@
 @import 'Reset.css';
 
 .Header {
-    width: 375px;
+    width: 100%;
     height: 70px;
     display: flex;
 }
@@ -11,11 +11,42 @@
     height: 50px;
     display: block;
     margin-top: 10px;
-    margin-left: 162px;
-
+    margin-left: 43.2%;
 }
 
 .Hamburger{
     margin-left: auto;
-    padding: 20px;
+    padding: 20px 7.5%;
 }
+
+.MenuModal{
+    position: absolute;
+    background-color: white;
+    width: 375px;
+    height: 815px;
+    z-index: 1;
+}
+
+.MenuHeader{
+    display: flex;
+    margin: 25px 30px;
+}
+
+.close{
+    margin-left: auto;
+}
+
+.MenuLogin{
+    display: flex;
+    margin: 30px;  
+}
+
+.MenuLogin .p{
+    margin-left: auto;
+}
+
+.MenuList{
+   margin-left: 30px;
+   text-align: left;
+}
+
