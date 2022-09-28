@@ -22,7 +22,7 @@ public class User {
     private int usrSq;
 
     @Column(name="usr_id")
-    private int usrID;
+    private String usrId;
 
     @Column(name="usr_pw")
     private String usrPw;
@@ -44,3 +44,4 @@ public class User {
     @Column(name="usr_mod_dt")
     private Timestamp usrModDt;
 }
+

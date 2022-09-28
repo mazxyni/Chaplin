@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -11,11 +12,12 @@ import java.util.Map;
 
 @RequiredArgsConstructor
 @RequestMapping("/usr")
+@RestController
 public class UserController {
 //    @GetMapping("/usr")  - 전체조회 (Select)
 //    @GetMapping("/usr/{id}") - 개별조회 (Select)
 //    @PostMapping("/usr") - 등록 save (insert)
-//    @PutMapping("/usr/{id}") - 수정 save (Update)
+//    @PatchMapping("/usr/{id}") - 수정 save (Update)
 //    @DeleteMapping("/usr/{id}") - 삭제 save (Delete)
 
     private final UserService userService;
@@ -35,7 +37,7 @@ public class UserController {
         return userService.saveUser(user);
     }
 
-    @PutMapping("/{usrSq}")
+    @PatchMapping("/{usrSq}")
     public User updateUser(@RequestBody User user){
         return userService.updateUser(user);
     }
@@ -53,4 +55,12 @@ public class UserController {
 
         return response;
     }
+
+
+    @ExceptionHandler(IllegalStateException.class)
+    public Object validateDuplicateUserId(Exception e) {
+        return e.getClass(); // 이미 사용 중인 아이디입니다.
+    }
+
+
 }
