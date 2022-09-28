@@ -28,6 +28,8 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 
+	//security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// https://mvnrepository.com/artifact/org.apache.clerezza.ext/org.json.simple
