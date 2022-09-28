@@ -24,7 +24,7 @@ public class UserService {
         return userRepository.findById(usrSq).get();
     }
 
-    public List<User> getUserById(String usrId) {
+    public User getUserById(String usrId) {
         return userRepository.findByUsrId(usrId);
     }
 
@@ -36,7 +36,7 @@ public class UserService {
 
     // 아이디 중복 확인
     private void validateDuplicateUserId(User user) {
-        List<User> findUser = getUserById(user.getUsrId());
+        User findUser = getUserById(user.getUsrId());
         if (findUser != null) {
             throw new IllegalStateException("이미 존재하는 아이디입니다.");
         }
