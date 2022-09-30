@@ -16,6 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final PrincipalDetailsService principalDetailsService;
+
     // 암호화 방식 빈(Bean) 생성
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
