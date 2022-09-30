@@ -3,6 +3,7 @@ package com.example.demo.service;
 import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,6 +16,7 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public List<User> getUser() {
         return userRepository.findAll();
@@ -31,6 +33,8 @@ public class UserService {
     @Transactional
     public User saveUser(User user) {
         validateDuplicateUserId(user);  // 아이디 중복 확인
+        String encodedPassword = passwordEncoder.encode(user.getUsrPw());
+        user.setUsrPw(encodedPassword);
         return userRepository.save(user);
     }
 
