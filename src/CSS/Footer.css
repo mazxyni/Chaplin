@@ -1,0 +1,8 @@
+@import 'Reset.css';
+
+.Footer{
+    position: absolute;
+    width: 100%;
+    height: 70px;
+    bottom: 0px;
+}

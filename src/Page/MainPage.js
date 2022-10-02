@@ -7,6 +7,7 @@ function Main() {
         <div>
             <h1>메인 페이지</h1>
             <Link to='/SelectRegion'>일정계획</Link>
+            <p><Link to='/MyPage'>마이페이지</Link></p>
             <p><Link to='/Test'>반응형 테스트</Link></p>
         </div>
     );

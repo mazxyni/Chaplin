@@ -6,6 +6,7 @@ import ScheduleAPlanPage from './Page/PlanPage_home';
 import SelectRegion from './Page/PlanPage_selectRegion';
 import SelectDate from './Page/PlanPage_selectDate';
 import Test from './Page/Test';
+import MyPage from './Page/MyPage';
 
 
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='SelectRegion' element={<SelectRegion />} />
           <Route path='SelectDate' element={<SelectDate />}/>
           <Route path='Plan' element={<ScheduleAPlanPage />} />
+          <Route path='MyPage' element={<MyPage />} />
         </Routes>
       
     </div>
