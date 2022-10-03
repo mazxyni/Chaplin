@@ -28,8 +28,6 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 
-	//security
-	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// https://mvnrepository.com/artifact/org.apache.clerezza.ext/org.json.simple
@@ -50,8 +48,21 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	//security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
 	// 아이디 중복체크, 유효성 검사
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// Client
+	implementation 'de.codecentric:spring-boot-admin-starter-client:2.6.2'
+
+	// actuator
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	// 뷰 단에서 현재 로그인된 사용자의 정보를 가져오기 위해 추가
+	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
 }
 
 tasks.named('test') {
