@@ -35,13 +35,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                // user 페이지 설정
-                .antMatchers("/mypage/**").authenticated() // 로그인 필요
-                // 기타 url은 모두 허용
-                .anyRequest().permitAll()
-                .and()
-                // 로그인 페이지 사용
-                .formLogin();
+            // user 페이지 설정
+            .antMatchers("/mypage/**").authenticated() // 로그인 필요
+            // 기타 url은 모두 허용
+            .anyRequest().permitAll()
+            .and()
+            // 로그인 페이지 사용
+            .formLogin();
 
         http.csrf().disable();
 //                .loginPage("/login") // 로그인 페이지 경로 설정
