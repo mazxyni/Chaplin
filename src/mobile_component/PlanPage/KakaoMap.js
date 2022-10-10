@@ -28,6 +28,7 @@ function KakaoMap({ searchPlace }) {
     //console.log('맵' + chosenStartDate, chosenEndDate)
     //console.log(chosenDateArray)
 
+
     useEffect(() => {
         kakao.maps.load(() => {
             var infowindow = new kakao.maps.InfoWindow({ zIndex: 1 });
@@ -143,20 +144,27 @@ function KakaoMap({ searchPlace }) {
                 {/*일차*/}
                 {button == true ? (<div className='MyPlanDay'> 
                     {chosenDateArray.map((item, i) => (
-                    <div key={i} className='MyPlanDay-list' onClick={() => {setDayButton(i); console.log(i)}}>Day {i + 1}</div>))} 
+                    <div key={i} className={'MyPlanDay-list' + (i == DayButton ? 'active': '')}>
+                        <div onClick={() => {setDayButton(i); console.log(i)}}>Day {i + 1}</div>
+                    </div>))} 
                 </div>) : (null)}
 
                 {/* 일정 */}
                 {(add == true) && (button == true)  ? (<div className='MyPlanPlace'>
 
-                    {addPlace.filter(addPlace => addPlace.num == DayButton).map((item, i) => (<div key={i} className='MyPlanPlace-list'>
+                    {addPlace.filter(addPlace => addPlace.num == DayButton).map((item, i) => (
+                    <div key={DayButton + i} className='MyPlanPlace-list'>
                         <div style={{display:'flex', margin:'5px'}}>
                             <h4 style={{marginRight:'15px', fontFamily:'Roboto Bold', fontWeight:'700'}}>{item.place.place_name}</h4>
                             <span style={{marginLeft : 'auto'}} onClick={() => {
-                                let copy = [...addPlace]; // addPlace배열 카피본 만들기
-                                copy.splice(i,1); // 선택한 i번째 목적지 삭제하기
+                                let copy = [...addPlace] // addPlace배열 카피본 만들기
+                                let copy2 = copy.filter(addPlace => addPlace.num == DayButton); // 필터링한 카피본 만들기(일차에 해당하는 여행지만)
+                                copy2.splice(i,1); // 선택한 i번째 목적지 삭제하기
+                                //console.log(...copy2)
+                                copy = [...copy.filter(copy => copy.num !== DayButton), ...copy2] // 일차에 해당하지 않는 여행지만 필터링해서 copy2추가 
+                                //console.log(copy)
                                 setAddPlace(copy); // addPlace 변경
-                                //console.log(props.addPlace)
+                                //console.log(addPlace)
                             }}><BiMinus /></span>
                         </div>
                         <div style={{fontFamily:'Roboto Regular', fontWeight:'400', fontSize:'13px', margin:'10px 5px', textAlign:'left'}}>
@@ -170,7 +178,7 @@ function KakaoMap({ searchPlace }) {
                 </div>) : (null)}  
             </div>
 
-            
+            {console.log(addPlace)}
             {/* 내 일정 열기 버튼 */}
             {!button && (<div className='MyPlanButtonOpen' onClick={() => {
                 setButton(true)
