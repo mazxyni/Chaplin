@@ -52,5 +52,9 @@ public class User {
     // 스프링시큐리티 연동 위해 권한 추가
     @Column(name="usr_role")
     private String usrRole;
+
+    public User(String usrNm) {
+        this.usrNm = usrNm;
+    }
 }
 
