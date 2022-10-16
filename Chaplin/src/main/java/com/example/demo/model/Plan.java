@@ -21,7 +21,7 @@ public class Plan {
 
     @Id // pk 설정
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
-    private int plnSq;
+    private Integer plnSq;
 
     @ManyToOne // 하나의 회원은 여러개의 일정
     @JoinColumn(name="usr_sq")

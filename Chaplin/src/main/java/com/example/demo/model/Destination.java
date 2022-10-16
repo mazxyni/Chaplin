@@ -22,7 +22,7 @@ public class Destination {
 
     @Id // pk 설정
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
-    private int desSq;
+    private Integer desSq;
 
     @ManyToOne // 하나의 일정은 여러개의 목적지
     @JoinColumn(name="pln_sq")
