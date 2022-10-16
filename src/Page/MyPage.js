@@ -3,35 +3,41 @@ import Header from "../mobile_component/Header";
 import Footer from "../mobile_component/Footer";
 import {chosenEndDate, chosenStartDate} from '../store.js'
 import { useSelector } from "react-redux";
+import '../CSS/MyPage.css'
+import dayjs from 'dayjs';
 
 function MyPage() {
-    const chosenStartDate = useSelector((state) => state.chosenStartDate)
-    const chosenEndDate = useSelector((state) => state.chosenEndDate)
+    const chosenStartDate = useSelector((state) => dayjs(state.chosenStartDate).format('YYYY/MM/DD'))
+    const chosenEndDate = useSelector((state) => dayjs(state.chosenEndDate).format('YYYY/MM/DD'))
+    //const chosenPlace = useSelector((state) => state.chosenPlace);
+    const chosenPlace = [{num: 1, place: '롯데월드'}, {num: 1, place: '롯데월드2'}];
 
+    console.log(dayjs(chosenStartDate).format('YYYY/MM/DD'))
     return(
         <div className="MyPage">
             <Header />
             
             {/* 프로필 */}
             <div className="profile">
-                <div style={{width:'35px', height:'35px', backgroundColor:'#000', marginLeft:'45.4%', marginTop:'50px'}}>
+                <div className="profile-img">
                 </div>
 
             </div>
 
             {/* 프로필 수정 */}
             <div className="profileModify">
-                <button className="profileModifyButton" style={{marginTop:'20px', marginBottom:'50px'}}>프로필 수정</button>
+                <button className="profileModifyButton">프로필 수정</button>
+            </div>
+
+            <div>
+                <p className="MyPlanP"> 내 여행 </p> 
             </div>
 
             {/* 내 여행 */}
             <div className="MyPagePlan">
-                <div>
-                   <p style={{fontSize:'14px', fontWeight:'700', textDecoration :'underline', textUnderlineOffset:'5px', textDecorationColor:'#566AF0', textDecorationThickness:'1.5px', marginBottom:'30px'}}> 내 여행 </p> 
-                </div>
-
-                <div className="MyPagePlanList">
-                    <div>
+                
+                {chosenPlace.map((item, i) => (
+                <div key = {i} className="MyPagePlanList">
                         <div className="MyPagePlanImg">이미지</div>
 
                         <div className="MyPagePlantext">
@@ -40,8 +46,7 @@ function MyPage() {
                             <div className="MyPagePlanCheck">일정표 확인</div>
                             <div className="MyPagePlanOut">일정표 내보내기</div>
                         </div>
-                    </div>
-                </div>
+                </div>))}
             </div>            
 
             <Footer />

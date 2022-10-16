@@ -7,6 +7,7 @@ import {BiMinus} from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { setChosenPlace } from '../../store';
 import { Mobile } from '../../Responsive';
+import { Link } from 'react-router-dom';
 
 
 const { kakao } = window;
@@ -100,7 +101,8 @@ function KakaoMap({ searchPlace }) {
             <div id='myMap' style={{
                 width: '100%',
                 height: '100vh',
-                opacity: '99%'
+                opacity: '99%',
+                overflowY: 'hidden'
             }}></div>
 
             
@@ -186,7 +188,9 @@ function KakaoMap({ searchPlace }) {
 
             {button &&( <div className='PlanOpenButton'>
                 {/*일정 저장 버튼*/}
-                <div className='MyPlanSave' onClick={() =>{dispatch(setChosenPlace(addPlace))}}>일정 저장</div> 
+                
+                <div className='MyPlanSave' onClick={() =>{dispatch(setChosenPlace(addPlace))}}><Link to='/MyPage'>일정 저장</Link></div> 
+                
 
                 {/*내 일정 닫기 버튼*/}
                 <div className='MyPlanButtonClose' onClick={() => {setButton(false)}} >내 일정</div>

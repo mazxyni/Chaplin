@@ -18,7 +18,7 @@
 .PlanHeader { 
     width: 90%;
     position: absolute;
-    top: 20px;
+    top: 3%;
     left: 5%;
     display: flex;
     justify-content: space-between;
@@ -47,7 +47,7 @@
     width: 84%;
     height: 180px;
     left: 8%;
-    top: 330px;
+    top: 290px;
     background-color: #fff;
     z-index: 1;
 }
@@ -88,8 +88,8 @@
 /* 검색버튼 */
 .SearchButton {
     width: 10%;
-    line-height: 20px;
-    
+    line-height: 20px; 
+    color: #000; 
 }
   
 /* 검색결과 */
@@ -119,7 +119,7 @@
 /* 일정표 */
 .MyPlan {
     width: 90%;
-    height: 100px;
+    height: 90px;
     position: absolute;
     left: 5%;
     bottom: 95px;
@@ -157,7 +157,7 @@
     width: 50%;
     height: 25px;
     margin-right: 10px;
-    border-radius: 10%;
+    border-radius: 5px;
     background-color: #566AF0;
     color: #fff;
 }
@@ -170,7 +170,7 @@
 /* 목적지 */
 .MyPlanPlace{
     height: 60px;
-    margin-top: 15px;
+    margin-top: 5%;
     display: flex;
     overflow: auto;
     white-space: nowrap;
@@ -191,14 +191,14 @@
 /* 내 일정 버튼 - 열기 */
 .MyPlanButtonOpen {
     width: 90%;
-    height: 60px;
+    height: 50px;
     font-family: "Roboto Bold";
     font-weight: 700;
     font-size: 16px;
     position: absolute;
-    bottom: 20px;
+    bottom: 1%;
     left: 5%;
-    line-height: 60px;
+    line-height: 50px;
     background-color: white;
 }
 
@@ -206,14 +206,14 @@
 /* 일정표 열렸을 때 */
 .PlanOpenButton {
     width: 90%;
-    height: 60px;
+    height: 50px;
     position: absolute;
-    bottom: 20px;
+    bottom: 1%;
     left: 5%;
     font-family: "Roboto Bold";
     font-weight: 700;
     font-size: 16px;
-    line-height: 60px;
+    line-height: 50px;
     display: flex;
     justify-content: space-between;
     z-index: 1;
@@ -222,7 +222,7 @@
 /* 내 일정 버튼 - 닫기 */
 .MyPlanButtonClose {
     width: 45%;
-    height: 60px;
+    height: 50px;
     background-color: white; 
 }
 
@@ -230,7 +230,7 @@
 /* 일정 저장 버튼 */
 .MyPlanSave {
     width: 45%;
-    height: 60px;
+    height: 50px;
     color: #fff;
     background-color: #566AF0;
   
@@ -244,7 +244,7 @@
     width: 100%;
     height: 19px;
     line-height: 19px;
-    top: 150px;
+    top: 18%;
     color: #C1C1C1;
     text-align: center;
 }
@@ -318,11 +318,11 @@
 
 /* 날짜 선택 페이지 */
 .Date{
-    position: absolute;
     width: 100%;
     height: 19px;
+    position: absolute;
     line-height: 19px;
-    top: 150px;
+    top: 18%;
     color: #C1C1C1;
     text-align: center;
 }
@@ -348,19 +348,19 @@
 }
 
 .react-datepicker__navigation {
-    margin-top: 47px
+    margin-top: 10%;
 }
 
 .react-datepicker__current-month{
-    margin-top: 40px !important;
-    margin-bottom: 50px;
+    margin-top: 8% !important;
+    margin-bottom:5%;
     font-size: 16px !important;
     text-align: center;
 }
 
 .react-datepicker__day-names {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 13px;
     display: flex;
     justify-content: space-around;
 }
@@ -375,7 +375,7 @@
 .react-datepicker__week {
     display: flex;
     justify-content: space-around;
-    margin-top: 25px;
+    margin-top: 5%;
 }
 
 .react-datepicker__day--selected, .react-datepicker__day--in-selecting-range

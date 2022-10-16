@@ -42,7 +42,7 @@ function ScheduleAPlanPage() {
     
 
     return (
-        <div className='PlanPage'>
+        <div className='PlanPage' >
         <Mobile>
             {/* 일정 계획 페이지 헤더 */}
             <div className='PlanHeader'>

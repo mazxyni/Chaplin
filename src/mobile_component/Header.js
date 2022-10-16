@@ -16,8 +16,9 @@ function Header() {
             <img className='Logo' alt='logo' src={'img/logo.png'}/>
 
             {/* 햄버거메뉴 */}
-            <HiOutlineMenu className='Hamburger' size={30} onClick={() => {setMenu(true)}}/>
-
+            <div className='Hamburger'>
+                <HiOutlineMenu  size={30} onClick={() => {setMenu(true)}}/>
+            </div>
         </div>
         
         </>
