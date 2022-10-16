@@ -46,6 +46,7 @@ public class User {
     @Column(name="usr_mod_dt")
     private Timestamp usrModDt;
 
+    @Builder.Default
     @OneToMany(mappedBy="user")
     private List<Plan> plans = new ArrayList<Plan>();
 
