@@ -23,7 +23,44 @@ public class PrincipalDetails implements UserDetails {
         return auth;
     }
 
-    // 비밀번호
+// 필요 시 새로운 인터페이스 만들어서 다중 상속
+
+//    public Integer getUsrSq() {
+//        return user.getUsrSq();
+//    }
+//
+//    public String getUsrId() {
+//        return user.getUsrId();
+//    }
+//
+//    public String getUsrPw() {
+//        return user.getUsrPw();
+//    }
+//
+//    public String getUsrNm() {
+//        return user.getUsrNm();
+//    }
+//
+//    public String getUsrGn() {
+//        return user.getUsrGn();
+//    }
+//
+//    public String getUsrEm() {
+//        return user.getUsrEm();
+//    }
+//
+//    public String getUsrRole() {
+//        return user.getUsrRole();
+//    }
+//
+//    public Timestamp getUsrRegDt(){
+//        return user.getUsrRegDt();
+//    }
+//
+//    public Timestamp getUsrModDt(){
+//        return user.getUsrModDt();
+//    }
+
     @Override
     public String getPassword() {
         return user.getUsrPw();
@@ -32,7 +69,7 @@ public class PrincipalDetails implements UserDetails {
     //이름
     @Override
     public String getUsername() {
-        return user.getUsrNm();
+        return user.getUsrId();
     }
 
     //계정 만료 확인
