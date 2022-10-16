@@ -21,6 +21,7 @@ public class Metropolitan {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private int metSq;
 
+    @Builder.Default
     @OneToMany(mappedBy = "metropolitan")
     private List<City> cityList = new ArrayList<>();
 
