@@ -8,13 +8,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-import static org.springframework.security.config.Customizer.withDefaults;
 
 @Configuration
 @EnableWebSecurity
@@ -32,7 +27,7 @@ public class SecurityConfig {
     // authenticationManager를 Bean 등록합니다.
 //    @Bean
 //    public AuthenticationManager authenticationManagerBean() throws Exception {
-//        return super.authenticationManagerBean();
+//        return authenticationManagerBean();
 //    }
 
     @Bean
@@ -55,7 +50,6 @@ public class SecurityConfig {
                 .anyRequest().permitAll()
                 .and()
                 .formLogin();
-
 
         http.csrf().disable();
         return http.build();

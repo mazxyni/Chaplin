@@ -21,6 +21,7 @@ public class UserService {
     }
 
     public User getUserBySq(Integer usrSq) {
+
         return userRepository.findById(usrSq).get();
     }
 

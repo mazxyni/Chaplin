@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.City;
+import com.example.demo.model.Metropolitan;
 import com.example.demo.service.CityService;
+import com.example.demo.service.MetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,8 +15,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/city")
 @RestController
-
 public class CityController {
+
     private final CityService cityService;
 
     @GetMapping("")
@@ -22,7 +24,7 @@ public class CityController {
         return cityService.getCity();
     }
 
-    @GetMapping("/citySq}")
+    @GetMapping("/{citySq}")
     public City getCityBySq(@PathVariable("citySq") Integer citySq){
         return cityService.getCityBySq(citySq);
     }

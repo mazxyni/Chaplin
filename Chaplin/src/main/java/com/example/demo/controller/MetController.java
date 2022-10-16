@@ -13,8 +13,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/met")
 @RestController
-
 public class MetController {
+
     private final MetService metService;
 
     @GetMapping("")
@@ -22,8 +22,8 @@ public class MetController {
         return metService.getMetropolitan();
     }
 
-    @GetMapping("/metSq}")
-    public Metropolitan getMetBySq(@PathVariable("metSq") Integer usrSq){
-        return metService.getMetBySq(usrSq);
+    @GetMapping("/{metSq}")
+    public Metropolitan getMetropolitanBySq(@PathVariable("metSq") Integer metSq){
+        return metService.getMetropolitanBySq(metSq);
     }
 }
