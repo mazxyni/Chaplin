@@ -4,6 +4,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import javax.annotation.Nullable;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
@@ -48,7 +49,7 @@ public class User {
 
     @Builder.Default
     @OneToMany(mappedBy="user")
-    private List<Plan> plans = new ArrayList<Plan>();
+    private List<Plan> plans = new ArrayList<>();
 
     // 스프링시큐리티 연동 위해 권한 추가
     @Column(name="usr_role")
