@@ -46,24 +46,37 @@ function SelectDate () {
     // 일차 배열 
     function DayArray() {
 
-        //console.log(startDate, endDate);
+        console.log(startDate, endDate);
 
-        // 첫 날짜부터 끝 날짜 동안 while문 실행
-        while(startDate <= endDate) {
-
-
+        // 첫 날짜만 선택했을 때(날짜 하나만 선택했을 때)
+        if (endDate == null) {
             let offset = startDate.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
             let dateOffset = new Date(startDate.getTime() - offset);
             //console.log(dateOffset.toISOString())
 
             // 일차 배열에 날짜 넣기
             DateArray.push(dateOffset.toISOString().split('T')[0]);
-            //console.log(DateArray);
-            //console.log(startDate);
+            console.log(DateArray);
 
-            // 날짜 +1
-            startDate.setDate(startDate.getDate() + 1);
-            //console.log(startDate);
+        }else{ // 첫날짜, 끝 날짜 선택했을 때 (날짜 두개 선택했을 때)
+
+            // 첫 날짜부터 끝 날짜 동안 while문 실행
+            while(startDate <= endDate) {
+                
+
+                let offset = startDate.getTimezoneOffset() * 60000; //ms단위라 60000곱해줌
+                let dateOffset = new Date(startDate.getTime() - offset);
+                //console.log(dateOffset.toISOString())
+
+                // 일차 배열에 날짜 넣기
+                DateArray.push(dateOffset.toISOString().split('T')[0]);
+                //console.log(DateArray);
+                //console.log(startDate);
+
+                // 날짜 +1
+                startDate.setDate(startDate.getDate() + 1);
+                //console.log(startDate);
+            }
         }
 
         return dispatch(setChosenDateArray(DateArray));  

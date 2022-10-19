@@ -145,6 +145,7 @@ function KakaoMap({ searchPlace }) {
 
                 {/*일차*/}
                 {button == true ? (<div className='MyPlanDay'> 
+                
                     {chosenDateArray.map((item, i) => (
                     <div key={i} className={'MyPlanDay-list' + (i == DayButton ? 'active': '')}>
                         <div onClick={() => {setDayButton(i); console.log(i)}}>Day {i + 1}</div>
