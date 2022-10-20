@@ -1,0 +1,64 @@
+
+.SelectDiv {
+    position: absolute;
+    width: 70%;
+    height: 72%;
+    left: 15%;
+    bottom: 50px;
+    background-color: #F8F9FE;
+    z-index: 1;
+}
+
+.RegionDropDown {
+    margin: 30px 150px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.metropolitan {
+    margin-top: 20px;
+    width: 130px;
+    background: #fff;
+  }
+
+.city {
+    margin-top: 20px;
+    width: 130px;
+    background: #fff;
+}
+  
+.selected {
+    display: flex;
+    height: 20px;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+  
+.selected-value {
+    max-width: 90px;
+}
+  
+.value {
+    width: 130px;
+    height: 300px;
+    background: #fff;
+    position: absolute;
+    overflow: auto;
+}
+  
+.value li {
+    padding: 5px 10px;
+    text-align: left;
+}
+
+  
+.SelectButton-Region {
+    position: absolute;
+    width: 30%;
+    height: 40px;
+    bottom: 24px;
+    left: 34%;
+    color: #fff;
+    background-color: #566AF0;
+    text-align: center;
+}

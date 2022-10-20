@@ -1,5 +1,5 @@
 import React from "react"
-import { Pc, Mobile } from "../Responsive"
+import { PC, Mobile } from "../Responsive"
 
 function Test() {
 
@@ -7,7 +7,7 @@ function Test() {
     
     return(
         <div>
-            <Pc>PC</Pc>
+            <PC>PC</PC>
             <Mobile>Mobile</Mobile>
         </div>
     )

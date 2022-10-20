@@ -1,11 +1,11 @@
 import React from "react";
 import { useMediaQuery} from "react-responsive";
 
-export const Pc = ({ children }) => {
-    const isPc = useMediaQuery({
+export const PC = ({ children }) => {
+    const isPC = useMediaQuery({
       query: "(min-width:600px)"
     });
-    return <>{isPc && children}</>
+    return <>{isPC && children}</>
 }
 
 export const Mobile = ({ children }) => {
