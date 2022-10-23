@@ -46,8 +46,18 @@ public class UserService {
     }
 
     @Transactional
-    public User updateUser(User user) {
-        return userRepository.save(user);
+    public User updateUser(Integer usrSq, User user) {
+        User origin = userRepository.findById(usrSq).get();
+
+        if (user.getUsrId() != null) {
+            validateDuplicateUserId(user); // 아이디 중복확인
+            origin.setUsrId(user.getUsrId());
+        } else if (user.getUsrNm() != null){
+            origin.setUsrNm(user.getUsrNm());
+        } else if (user.getUsrPw() != null){
+            origin.setUsrPw(passwordEncoder.encode(user.getUsrPw()));
+        }
+        return userRepository.save(origin);
     }
 
     @Transactional

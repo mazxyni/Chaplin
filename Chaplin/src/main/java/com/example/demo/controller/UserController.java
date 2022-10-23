@@ -37,8 +37,8 @@ public class UserController {
     }
 
     @PatchMapping("/{usrSq}")
-    public User updateUser(@RequestBody User user){
-        return userService.updateUser(user);
+    public User updateUser(@PathVariable Integer usrSq, @RequestBody User user){
+        return userService.updateUser(usrSq, user);
     }
 
     @DeleteMapping("/{usrSq}")
