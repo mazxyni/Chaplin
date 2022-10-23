@@ -51,4 +51,5 @@ public class Plan {
     @UpdateTimestamp
     @Column(name="pln_mod_dt")
     private Timestamp plnModDt;
+
 }

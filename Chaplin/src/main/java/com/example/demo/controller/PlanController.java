@@ -20,9 +20,9 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@SessionAttributes("user")
 @RequestMapping("/pln")
 @RequiredArgsConstructor
+@SessionAttributes("user")
 public class PlanController {
 
     private final PlanService planService;

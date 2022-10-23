@@ -52,10 +52,14 @@ public class UserService {
         if (user.getUsrId() != null) {
             validateDuplicateUserId(user); // 아이디 중복확인
             origin.setUsrId(user.getUsrId());
-        } else if (user.getUsrNm() != null){
-            origin.setUsrNm(user.getUsrNm());
         } else if (user.getUsrPw() != null){
             origin.setUsrPw(passwordEncoder.encode(user.getUsrPw()));
+        } else if (user.getUsrNm() != null){
+            origin.setUsrNm(user.getUsrNm());
+        } else if (user.getUsrGn() != null) {
+            origin.setUsrEm(user.getUsrEm());
+        } else if (user.getUsrEm() != null) {
+            origin.setUsrEm(user.getUsrEm());
         }
         return userRepository.save(origin);
     }
