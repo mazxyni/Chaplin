@@ -7,6 +7,7 @@ import com.example.demo.repository.PlanRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -16,11 +17,14 @@ public class PlanService {
     private final DesRepository desRepository;
 
 
-    public Plan getPlanById(Integer plnSq) {
-        return planRepository.findById(plnSq).get();
+    public Optional<Plan> getPlanById(Integer plnSq) {
+        return planRepository.findById(plnSq);
     }
+//    public List<Plan> getPlanAll() {
+//        return planQueryRepository.findAll();
+//    }
 
-    public Optional<Plan> getPlanByUser(User user){
+    public List<Plan> getPlanByUser(User user){
         return planRepository.findByUser(user);
     }
 

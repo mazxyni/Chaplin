@@ -18,10 +18,10 @@ public class City {
     @Id // pk 설정
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private int citySq;
-
-    @ManyToOne(fetch = FetchType.LAZY)// 하나의 광역시도는 여러개의 도시
-    @JoinColumn(name="met_sq", insertable = false, updatable = false)
-    private Metropolitan metropolitan;
+//
+//    @ManyToOne(fetch = FetchType.LAZY)// 하나의 광역시도는 여러개의 도시
+//    @JoinColumn(name="met_sq", insertable = false, updatable = false)
+//    private Metropolitan metropolitan;
 
     @Column(name="city_k_nm")
     private String cityKNm;

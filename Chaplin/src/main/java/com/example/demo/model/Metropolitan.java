@@ -20,9 +20,9 @@ public class Metropolitan {
     @Id // pk 설정
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private int metSq;
-
-    @OneToMany(mappedBy = "metropolitan")
-    private List<City> cityList = new ArrayList<>();
+//
+//    @OneToMany(mappedBy = "metropolitan")
+//    private List<City> cityList = new ArrayList<>();
 
     @Column(name="met_k_nm")
     private String MetKNm;

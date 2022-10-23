@@ -53,6 +53,7 @@ dependencies {
 
 	// 아이디 중복체크, 유효성 검사
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
 }
 
 tasks.named('test') {

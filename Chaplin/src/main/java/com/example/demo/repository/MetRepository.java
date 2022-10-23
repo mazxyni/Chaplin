@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface MetRepository extends JpaRepository<Metropolitan, Integer> {
-    @Query("SELECT m FROM Metropolitan m JOIN FETCH m.cityList")
-    List<Metropolitan> findAllWithCityListUsingFetchJoin();
+//    @Query("SELECT m FROM Metropolitan m JOIN FETCH m.cityList")
+//    List<Metropolitan> findAllWithCityListUsingFetchJoin();
 }

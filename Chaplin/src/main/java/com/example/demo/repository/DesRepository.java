@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface DesRepository extends JpaRepository<Destination, Integer> {
-    Optional<Destination> findByPlan(Plan plan);
+    Optional<Destination> findByPlan(Optional<Plan> plan);
 
     void deleteAllByPlan(Plan plan);
 }

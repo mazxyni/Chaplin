@@ -41,7 +41,7 @@ public class Plan {
     @Column(name="pln_s_dd")
     private Date plnSDd;
 
-    @Column(name="pln_e_dd")
+    @Column(name="pln_f_dd")
     private Date plnFDd;
 
     @CreationTimestamp

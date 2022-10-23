@@ -46,8 +46,8 @@ public class User {
     @Column(name="usr_mod_dt")
     private Timestamp usrModDt;
 
-    @OneToMany(mappedBy="user")
-    private List<Plan> plans = new ArrayList<Plan>();
+//    @OneToMany(mappedBy="user")
+//    private List<Plan> plans = new ArrayList<Plan>();
 
     // 스프링시큐리티 연동 위해 권한 추가
     @Column(name="usr_role")
