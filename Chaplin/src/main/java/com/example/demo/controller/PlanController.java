@@ -9,15 +9,18 @@ import com.example.demo.service.DesService;
 import com.example.demo.service.PlanService;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
+@SessionAttributes("user")
 @RequestMapping("/pln")
 @RequiredArgsConstructor
 public class PlanController {
@@ -25,6 +28,27 @@ public class PlanController {
     private final PlanService planService;
     private final UserService userService;
     private final DesService desService;
+
+    //로그인 상태 유지
+//    @Autowired
+//    private PlanService planService;
+//
+//    @ModelAttribute("user")
+//    public User setUser() {
+//        System.out.println("*****setMember()*****");
+//        return new User();
+//    }
+
+//    @RequestMapping("/getPlanList")
+//    public String getPlanList(@ModelAttribute("user") User user, Model model, Plan plan) {
+//        System.out.println("getPlanList");
+//        if(user.getUsrId()==null) {
+//            return "redirect:login";
+//        }
+//        List<Plan> planList = planService.getPlanById(plan.getPlnSq());
+//        model.addAttribute("planList", planList);
+//        return "getPlanList";
+//    }
 
     // 회원의 일정 가져오기 (Plan 반환)
     @GetMapping("")
