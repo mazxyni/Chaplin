@@ -58,16 +58,11 @@ public class PlanController {
 
         return planService.getPlanByUser(user);
     }
-//
-//    @GetMapping("")
-//    public Optional<Plan> getPlanAll(){
-//        return planService.getPlanAll();
-//    }
 
     // 일정 번호에 따라 상세 목적지 가져오기
     @GetMapping("/{plnSq}")
     public Optional<Destination> getDesByPlnSq(@PathVariable Integer plnSq){
-        Optional<Plan> plan = planService.getPlanById(plnSq);
+        Plan plan = planService.getPlanById(plnSq).get();
         return desService.getDesByPlan(plan);
     }
 

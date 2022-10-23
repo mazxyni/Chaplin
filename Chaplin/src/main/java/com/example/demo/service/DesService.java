@@ -19,7 +19,7 @@ public class DesService {
         return desRepository.save(destination);
     }
 
-    public Optional<Destination> getDesByPlan(Optional<Plan> plan) {
+    public Optional<Destination> getDesByPlan(Plan plan) {
         return desRepository.findByPlan(plan);
     }
 }
