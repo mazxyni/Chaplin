@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -27,17 +28,22 @@ public class PlanController {
 
     // 회원의 일정 가져오기 (Plan 반환)
     @GetMapping("")
-    public Optional<Plan> getPlanByUsrId(Authentication authentication){
+    public List<Plan> getPlanByUsrId(Authentication authentication){
         PrincipalDetails userDetails = (PrincipalDetails) authentication.getPrincipal();
         User user = userService.getUserById(userDetails.getUsername());
 
         return planService.getPlanByUser(user);
     }
+//
+//    @GetMapping("")
+//    public Optional<Plan> getPlanAll(){
+//        return planService.getPlanAll();
+//    }
 
     // 일정 번호에 따라 상세 목적지 가져오기
     @GetMapping("/{plnSq}")
     public Optional<Destination> getDesByPlnSq(@PathVariable Integer plnSq){
-        Plan plan = planService.getPlanById(plnSq);
+        Optional<Plan> plan = planService.getPlanById(plnSq);
         return desService.getDesByPlan(plan);
     }
 
