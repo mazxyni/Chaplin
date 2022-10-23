@@ -1,5 +1,5 @@
 import React from "react"
-import '../CSS/Header.css'
+import '../CSS/Mobile/Header_Mobile.css'
 import {IoMdClose} from 'react-icons/io'
 import {MdOutlineHome} from 'react-icons/md'
 

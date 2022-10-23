@@ -1,3 +1,5 @@
+@import '../Reset.css';
+
 .schedule{
   position: relative;
 }

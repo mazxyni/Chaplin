@@ -1,6 +1,6 @@
 import {React, useState} from "react";
 import { useSelector } from 'react-redux';
-import '../../CSS/PlanPage.css'
+import '../../CSS/Mobile/PlanPage_Mobile.css'
 import { Link } from 'react-router-dom';
 
 function SelectSchedule() {

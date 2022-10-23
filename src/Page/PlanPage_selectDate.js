@@ -1,8 +1,8 @@
 import {React, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import '../CSS/PlanPage.css';
-import Header from '../mobile_component/Header';
+import '../CSS/Mobile/PlanPage_Mobile.css';
+import Header from '../mobile_component/Header_Mobile.js';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import dayjs from 'dayjs';
@@ -111,7 +111,7 @@ function SelectDate () {
                     />
                     
                     
-                    <Link to='/Plan'>
+                    <Link to='/Plan_Mobile'>
                         <div className='SelectButton-Date' onClick={() => {ChosenDate(); DayArray();}} >적용하기</div>
                     </Link>
                 </div>

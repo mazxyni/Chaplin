@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import styled from "styled-components";
-import HeaderPc from "../HeaderPc.js";
-import Region from "./Region";
-import DatePicker from"./DatePicker.js";
+import HeaderPc from "../PC_component/Header_PC.js";
+import Region from "../PC_component/PlanPage_PC/Region";
+import DatePicker from"../PC_component/PlanPage_PC/DatePicker.js";
 import { BsEaselFill, BsPlus } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import {BiMinus} from 'react-icons/bi';
-import "../PlanPageCss/Plan.css";
-import "../PlanPageCss/Schedule.css";
-
+import "../CSS/PC/PlanPage_PC.css";
+import "../CSS/PC/Schedule_PC.css";
+import { PC } from "../Responsive.js";
 
 const { kakao } = window;
 
@@ -97,7 +97,7 @@ function Plan()  {
   const chosenMetro = useSelector((state) => state.region.Metro)
   const chosenCity = useSelector((state) => state.region.City)
 
-  
+  console.log(addPlace)
 
   const onChange = (e) => {
     setInputText(e.target.value);
@@ -147,10 +147,12 @@ function Plan()  {
         page: 1,
       };
 
-      if (searchPlace) {
-        // 키워드로 장소 검색
-        ps.keywordSearch(chosenMetro == '전체' ?  (searchPlace) : (
-          chosenCity == '전체' ? (chosenMetro + searchPlace) : (chosenMetro + chosenCity + searchPlace)), placesSearchCB, pageOption);
+      // 키워드로 장소 검색
+      if(searchPlace && chosenMetro){ 
+        ps.keywordSearch((chosenMetro == '전체'? (searchPlace) : (
+          chosenCity == '전체'? (chosenMetro + searchPlace) : (chosenMetro + chosenCity + searchPlace))), placesSearchCB, pageOption);
+      }else {
+        ps.keywordSearch(searchPlace, placesSearchCB, pageOption);
       }
 
       // 장소 검색이 완료됐을 때 호출되는 콜백함수
@@ -191,19 +193,17 @@ function Plan()  {
       }
     });
 
-  }, [searchPlace]); // searchPlace 바뀔 때 마다 랜더링 
+  }, [searchPlace, chosenMetro, chosenCity]); // searchPlace 바뀔 때 마다 랜더링 
 
 
   return (
     
     <div className="container">
-    
-    
-
+    {/* 헤더 */}
+    <HeaderPc />
+  
       {/* 일정계획 컴포넌트 */}
       <div className="Plans">
-      
-
 
         {/* 여행 일정 컴포넌트 */}
         <div className="map_schedule">
@@ -251,13 +251,15 @@ function Plan()  {
                                 console.log(addPlace)
                             }}><BiMinus /></span>
                         </div>
+                        {console.log(item2)}
                         <div style={{fontWeight:'400', fontSize:'14px', margin:'10px 5px', textAlign:'left'}}>
                             {item2.place.road_address_name ? (
                             <p >{item2.place.road_address_name}</p>
                             ) : (
-                            <p >{item2.place.address_name}</p>
+                            <p>{item2.place.address_name}</p>
                             )}
-                      </div>
+                        </div>
+
                     </div>):(null)}
 
                   </div>))}
@@ -308,13 +310,15 @@ function Plan()  {
                       {item.road_address_name ? (
                         <div className="place_address">
                           <span>{item.road_address_name}</span>
-                          <span>{item.address_name}</span>
                         </div>
                       ) : (
                         <span>{item.address_name}</span>
                       )}
                       <button className="addplanbtn" onClick={() => {
-                        setAddPlace(() => {return[...addPlace, {num: DayButton, place: item}]})// 추가한 결과 배열에 넣기
+                        if (selectStartDate != null ) { // 날짜를 선택 했을 때
+                          setAddPlace(() => {return[...addPlace, {num: DayButton, place: item}]})// 추가한 결과 배열에 넣기
+                        }else{// 날짜를 선택 안했을 때
+                        }
                       }}>
                         
                         <BsPlus />
@@ -350,7 +354,7 @@ function Plan()  {
       </div>
       {/* 지역 모달창 */}
       {regionButton==true? (<Region setRegionButton={setRegionButton}/>):(null)}
-      
+    
       
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react"
+import HeaderPc from "../PC_component/Header_PC";
 import { PC, Mobile } from "../Responsive"
 
 function Test() {
@@ -7,7 +8,10 @@ function Test() {
     
     return(
         <div>
-            <PC>PC</PC>
+            <PC>PC
+                <HeaderPc />
+                
+            </PC>
             <Mobile>Mobile</Mobile>
         </div>
     )

@@ -1,7 +1,7 @@
 import React from "react";
-import '../CSS/Footer.css'
+import '../CSS/Mobile/Footer_Mobile.css'
 
-function Footer() {
+function FooterMobile() {
 
     return(
         <div className="Footer">
@@ -11,4 +11,4 @@ function Footer() {
         </div>
     )
 }
-export default Footer;
+export default FooterMobile;

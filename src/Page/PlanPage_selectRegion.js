@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Pc, Mobile } from "../Responsive.js"
 import { Link } from 'react-router-dom';
-import '../CSS/PlanPage.css';
-import Header from '../mobile_component/Header';
+import '../CSS/Mobile/PlanPage_Mobile.css';
+import Header from '../mobile_component/Header_Mobile.js';
 import {IoIosArrowDown} from 'react-icons/io'
 import { useDispatch, useSelector } from 'react-redux';
 import {setChosenRegion} from '../store.js'

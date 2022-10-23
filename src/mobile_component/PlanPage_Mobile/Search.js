@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import KakaoMap from './KakaoMap';
-import '../../CSS/PlanPage.css'
+import '../../CSS/Mobile/PlanPage_Mobile.css'
 import { FaSearch } from 'react-icons/fa';
 
 function SearchPlace() {

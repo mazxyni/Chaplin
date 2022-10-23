@@ -1,17 +1,17 @@
 import React , { useState } from 'react';
 import {HiOutlineMenu} from 'react-icons/hi';
-import '../CSS/Header.css'
-import Menu from './Menu';
+import '../CSS/Mobile/Header_Mobile.css'
+import Menu from './Menu_Mobile';
 
 
-function Header() {
+function HeaderMobile() {
     const [menu, setMenu] = useState(false);
 
     return (
         <>
         {menu == true? (<Menu setMenu={setMenu}/>) : (null)}
         
-        <div className='Header'>
+        <div className='HeaderMobile'>
             {/* 채플린 아이콘 */}
             <img className='Logo' alt='logo' src={'img/logo.png'}/>
 
@@ -24,4 +24,4 @@ function Header() {
         </>
     );
 }
-export default Header;
+export default HeaderMobile;
