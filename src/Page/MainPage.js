@@ -9,6 +9,8 @@ function Main() {
             <Link to='/Plan'>일정계획</Link>
             <p><Link to='/MyPage'>마이페이지</Link></p>
             <p><Link to='/Test'>반응형 테스트</Link></p>
+            <p><Link to='Chatbot'>챗봇</Link></p>
+           
         </div>
     );
 }

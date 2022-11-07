@@ -1,0 +1,43 @@
+@import './Reset.css';
+
+.ChatDiv{
+    width: 500px;
+    height: 800px;
+    border: 2px solid;
+    
+}
+
+.ChatBot{
+    position: relative;
+    width: 480px;
+    height: 780px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #F4F6FD;
+}
+
+.Input{
+    position: absolute;
+    bottom: 0px; 
+    width: 100%; 
+}
+
+.ChatInput{
+    width: 70%;
+    height: 45px;
+    margin-bottom: 20px;
+    border: 1px gray;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px gray;
+    padding-left: 10px;
+}
+
+.ChatSend{
+    width: 70px;
+    height: 45px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #566AF0;
+    color: #fff;
+}

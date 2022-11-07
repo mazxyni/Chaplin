@@ -8,6 +8,7 @@ import SelectDate from './Page/PlanPage_selectDate';
 import Test from './Page/Test';
 import MyPage from './Page/MyPage';
 import PlanPage from './Page/PlanPage';
+import ChatBot from './Page/Chatbot';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='SelectDate' element={<SelectDate />}/>
           <Route path='Plan_Mobile' element={<ScheduleAPlanPage />} />
           <Route path='MyPage' element={<MyPage />} />
+          <Route path='Chatbot' element={<ChatBot />} />
         </Routes>
       
     </div>
