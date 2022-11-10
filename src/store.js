@@ -53,6 +53,18 @@ let chosenDateArray = createSlice({
 export let {setChosenDateArray} = chosenDateArray.actions
 
 // 일정표 목록
+let schedule = createSlice({
+  name:'schedule',
+  initialState : [],
+  reducers : {
+    setSchedule(state, action) {
+      return action.payload
+    }
+  }
+})
+export let {setSchedule} = schedule.actions
+
+// 일정표 세부 목록
 let chosenPlace = createSlice({
   name : 'chosenPlace',
   initialState : [],
@@ -73,6 +85,7 @@ export default configureStore({
     chosenStartDate : chosenStartDate.reducer,
     chosenEndDate : chosenEndDate.reducer,
     chosenDateArray : chosenDateArray.reducer,
+    schedule : schedule.reducer,
     chosenPlace : chosenPlace.reducer
     
    }

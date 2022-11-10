@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Pc, Mobile } from "../Responsive.js"
+import { Pc, Mobile } from "../Responsive.js";
 import { Link } from 'react-router-dom';
 import '../CSS/Mobile/PlanPage_Mobile.css';
-import Header from '../mobile_component/Header_Mobile.js';
+import Header from '../mobile_component/Header_Mobile';
 import {IoIosArrowDown} from 'react-icons/io'
 import { useDispatch, useSelector } from 'react-redux';
 import {setChosenRegion} from '../store.js'
@@ -44,21 +44,21 @@ function SelectRegion () {
             {/* 헤더 */}
             <Header />
             {/* 여행 지역 선택 */}
-            <>
+            <div>
             {/* {console.log(regionMetro)} */}
             {/* {console.log(region)} */}
-                <p className='Region'>여행 지역을 선택해주세요</p>
-                <div className='SelectDiv'>
-                    <div className='RegionDropDown'>
-                        <div className='Metropolitan'>
+                <p className='Region_mb'>여행 지역을 선택해주세요</p>
+                <div className='SelectDiv_mb'>
+                    <div className='RegionDropDown_mb'>
+                        <div className='Metropolitan_mb'>
                             <p style={{fontWeight:'700',fontSize:'14px',textAlign:'center'}}>시·도</p>
-                            <div className='metropolitan'>
-                                <div className='selected'  onClick = {() => {setMetroButton(!metroButton); setCityButton(false);}}>
-                                    <div className='selected-value'>{selected.Metro}</div>
+                            <div className='metropolitan_mb'>
+                                <div className='selected_mb'  onClick = {() => {setMetroButton(!metroButton); setCityButton(false);}}>
+                                    <div className='selected-value_mb'>{selected.Metro}</div>
                                     <div style={{margin:'1px'}}><IoIosArrowDown size={18}/></div>
                                 </div>
 
-                                {metroButton &&(<ul className='value'>
+                                {metroButton &&(<ul className='value_mb'>
                                     {region.map((item, i) => (
                                         <li key={i} onClick = {() => {setSelected({Metro:item.num, City:'전체'}); setMetroButton(false);}}>{item.num}</li> 
                                     ))}
@@ -71,15 +71,15 @@ function SelectRegion () {
                             ))}   
                             </select> */}
                         </div>
-                        <div className='City'>
+                        <div className='City_mb'>
                             <p style={{fontWeight:'700',fontSize:'14px',textAlign:'center'}}>시군구</p>
-                            <div className='city'>
-                                <div className='selected'  onClick = {() => {setCityButton(!cityButton); setMetroButton(false);}}>
-                                    <div className='selected-value'>{selected.City}</div>
+                            <div className='city_mb'>
+                                <div className='selected_mb'  onClick = {() => {setCityButton(!cityButton); setMetroButton(false);}}>
+                                    <div className='selected-value_mb'>{selected.City}</div>
                                     <div style={{margin:'1px'}}><IoIosArrowDown size={18}/></div>
                                 </div>
 
-                                {cityButton && (<ul className='value'>
+                                {cityButton && (<ul className='value_mb'>
 
                                     {/* {
                                     regionCity.filter(regionCity => selected.Metro==regionCity.num).map((item, i) => (
@@ -104,10 +104,10 @@ function SelectRegion () {
                         </div>
                     </div>
                     <Link to='/SelectDate'>
-                        <div className='SelectButton-Region' onClick={() => {dispatch(setChosenRegion(selected))}}>적용하기</div>
+                        <div className='SelectButton-Region_mb' onClick={() => {dispatch(setChosenRegion(selected))}}>적용하기</div>
                     </Link>
                 </div>
-            </>
+            </div>
             </Mobile>
         </div>
     );

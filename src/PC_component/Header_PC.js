@@ -1,37 +1,30 @@
 import React from "react";
-import { ReactComponent as Chaplinlogo } from "./chaplin_logo.svg";
+import {Link } from "react-router-dom";
+import { ReactComponent as Chaplinlogo } from '../PC_component/chaplin_logo.svg';
 import '../CSS/PC/Header_PC.css'
 
-function HeaderPc() {
-  return (
+function HeaderPC() {
+  return(
     <div className="header">
+      <div className="sign">
+        <div className="header_login"><Link to="/login">로그인</Link></div>
+        <div className="header_signup"><Link to="/signup_terms">회원가입</Link></div>
+      </div>
       <div className="gnb">
         <div>
-          <a href="#" className="info">
-            채플린
-          </a>
+          <Link to="#">챗봇 추천지</Link> 
         </div>
+
         <div>
-          <a href="#" className="chat">
-            챗봇 추천지
-          </a>
+          <Link to ="/"><Chaplinlogo width="80" height="80" /></Link>
         </div>
+
         <div>
-          <Chaplinlogo width="80" height="80" />
-        </div>
-        <div>
-          <a href="#" className="plan">
-            일정 계획
-          </a>
-        </div>
-        <div>
-          <a href="#" className="fes">
-            전국 축제
-          </a>
+          <Link to="/plan">일정 계획</Link>
         </div>
       </div>
     </div>
-  );
-}
+  )
+};
 
-export default HeaderPc;
+export default HeaderPC;

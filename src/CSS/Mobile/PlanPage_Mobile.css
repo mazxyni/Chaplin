@@ -1,5 +1,6 @@
 @import '../Reset.css';
 
+
 /* 일정계획 페이지 */
 .PlanPage {
     width: 100%;
@@ -189,14 +190,14 @@
   
   
 /* 내 일정 버튼 - 열기 */
-.MyPlanButtonOpen {
+.MyPlanButtonOpen_mb {
     width: 90%;
     height: 50px;
     font-family: "Roboto Bold";
     font-weight: 700;
     font-size: 16px;
     position: absolute;
-    bottom: 1%;
+    bottom: 2%;
     left: 5%;
     line-height: 50px;
     background-color: white;
@@ -208,7 +209,7 @@
     width: 90%;
     height: 50px;
     position: absolute;
-    bottom: 1%;
+    bottom: 2%;
     left: 5%;
     font-family: "Roboto Bold";
     font-weight: 700;
@@ -239,7 +240,7 @@
 
 /* 지역 선택 페이지 */
 
-.Region{
+.Region_mb{
     position: absolute;
     width: 100%;
     height: 19px;
@@ -249,7 +250,7 @@
     text-align: center;
 }
 
-.SelectDiv {
+.SelectDiv_mb {
     position: absolute;
     width: 84%;
     height: 72%;
@@ -259,36 +260,39 @@
 
 }
 
-.RegionDropDown {
-    margin: 30px ;
+.RegionDropDown_mb {
+    width: 80%;
+    margin: 10% ;
     display: flex;
     justify-content: space-between;
 }
 
-.metropolitan {
+.metropolitan_mb {
     margin-top: 20px;
     width: 110px;
     background: #fff;
+    
   }
 
-.city {
+.city_mb {
     margin-top: 20px;
     width: 110px;
     background: #fff;
+    
 }
   
-.selected {
+.selected_mb {
     display: flex;
     height: 20px;
     justify-content: space-between;
     padding: 5px 10px;
 }
   
-.selected-value {
+.selected-value_mb {
     max-width: 90px;
 }
   
-.value {
+.value_mb {
     width: 110px;
     height: 300px;
     background: #fff;
@@ -296,18 +300,19 @@
     overflow: auto;
 }
   
-.value li {
+.value_mb li {
     padding: 5px 10px;
     text-align: left;
 }
 
   
-.SelectButton-Region {
+.SelectButton-Region_mb {
     position: absolute;
     width: 30%;
     height: 40px;
     bottom: 24px;
     left: 34%;
+    line-height: 40px;
     color: #fff;
     background-color: #566AF0;
 
@@ -317,7 +322,7 @@
 
 
 /* 날짜 선택 페이지 */
-.Date{
+.Date_mb{
     width: 100%;
     height: 19px;
     position: absolute;
@@ -353,7 +358,7 @@
 
 .react-datepicker__current-month{
     margin-top: 8% !important;
-    margin-bottom:5%;
+    margin-bottom:7%;
     font-size: 16px !important;
     text-align: center;
 }
@@ -375,7 +380,7 @@
 .react-datepicker__week {
     display: flex;
     justify-content: space-around;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 .react-datepicker__day--selected, .react-datepicker__day--in-selecting-range
@@ -403,12 +408,13 @@
 
 
   
-.SelectButton-Date {
+.SelectButton-Date_mb {
     position: absolute;
     width: 30%;
     height: 40px;
     bottom: 24px;
     left: 34%;
+    line-height: 40px;
     color: #fff;
     background-color: #566AF0;
     

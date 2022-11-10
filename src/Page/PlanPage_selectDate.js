@@ -94,8 +94,8 @@ function SelectDate () {
             <Header />
             {/* 여행 날짜 선택 */}
             <>
-                <p className='Date'>여행 일자를 선택해주세요.</p>
-                <div className='SelectDiv'> 
+                <p className='Date_mb'>여행 일자를 선택해주세요.</p>
+                <div className='SelectDiv_mb'> 
                     <DatePicker
                     locale={ko} // 한국어
                     dateFormatCalendar={DATE_FORMAT_CALENDAR}
@@ -112,7 +112,7 @@ function SelectDate () {
                     
                     
                     <Link to='/Plan_Mobile'>
-                        <div className='SelectButton-Date' onClick={() => {ChosenDate(); DayArray();}} >적용하기</div>
+                        <div className='SelectButton-Date_mb' onClick={() => {ChosenDate(); DayArray();}} >적용하기</div>
                     </Link>
                 </div>
 

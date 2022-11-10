@@ -5,11 +5,6 @@ import '../CSS/ChatBot.css'
 
 function ChatBot() {
 
-  // const HmacSHA256 = require('crypto-js/hmac-sha256');
-  // const EncBase64 = require('crypto-js/enc-base64');
-  // signatureHeader = HmacSHA256(requestBodyString, secretKey).toString(EncBase64);
-
-
   const [input, setInput] = useState('');
   const [chat, setChat] = useState('');
   console.log(chat)
@@ -24,6 +19,7 @@ function ChatBot() {
   // 채팅을 시작할 때 나오는 고정 메세지
   const evnetQuery = () => {
 
+
   }
 
   // 사용자가 입력한 메세지 
@@ -31,6 +27,7 @@ function ChatBot() {
     // 사용자가 보낸 메세지 관리
 
     // 챗봇이 보낸 메세지 관리
+    // textQuery에 리퀘스트를 보냄
   }
 
   const keyPressHandler = (e) => {

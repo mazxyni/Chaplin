@@ -235,8 +235,8 @@ function Plan()  {
 
               {chosenDateArray != null ? (<div className="dateArray">
                 {chosenDateArray.map((item,i) => (
-                  <div key={i}>
-                    <div className="dateArray-list" onClick={()=> {setDayButton(i)}}> Day{i + 1} </div>
+                  <div key={i} >
+                    <div className={"dateArray-list"  + (i == DayButton ? 'active': '')} onClick={()=> {setDayButton(i)}}> Day{i + 1} </div>
                     
                     {addPlace.map((item2, j) => (
                       <div key={j}>
