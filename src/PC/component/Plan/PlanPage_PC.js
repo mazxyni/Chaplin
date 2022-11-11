@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import styled from "styled-components";
-import HeaderPc from "../PC_component/Header_PC.js";
-import Region from "../PC_component/PlanPage_PC/Region";
-import DatePicker from"../PC_component/PlanPage_PC/DatePicker.js";
+import HeaderPc from "../Header_PC.js";
+import Region from "../DatePicker/Region";
+import DatePicker from"../../component/DatePicker/DatePicker";
 import { BsEaselFill, BsPlus } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import {BiMinus} from 'react-icons/bi';
-import "../CSS/PC/PlanPage_PC.css";
-import "../CSS/PC/Schedule_PC.css";
-import { PC } from "../Responsive.js";
+import "../../component/Plan/Plan.css";
+import "../../component/Plan/Schedule.css";
+import { PC } from "../../../Responsive.js";
 
 const { kakao } = window;
 

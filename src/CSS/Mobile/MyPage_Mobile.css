@@ -1,5 +1,4 @@
-@import '../Reset.css';
-
+@import '../../PC/component/Reset.css';
 /* 프로필 사진 */
 .profile-img {
     width:35px;

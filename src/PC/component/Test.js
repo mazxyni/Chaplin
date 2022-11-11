@@ -1,11 +1,9 @@
 import React from "react"
-import HeaderPc from "../PC_component/Header_PC";
-import { PC, Mobile } from "../Responsive"
+import HeaderPc from '../component/Header_PC';
+import { PC, Mobile } from "../../Responsive";
 
 function Test() {
 
-
-    
     return(
         <div>
             <PC>PC

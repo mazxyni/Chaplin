@@ -1,0 +1,124 @@
+.Logins {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+  }
+
+  .login {
+    margin: 0 auto;
+    margin-bottom: 100px;
+  }
+   .login_left{
+    margin: 0 10px;
+   }
+   .login_righ{
+    margin: 0 10px;
+   }                                                                                                                                                                    
+  .login_text {
+      color: rgb(0, 0, 0);
+      font-size: 36px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 80px;
+    }
+  
+  .eng {
+      color: gray;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 3px;
+    }
+  
+  .id_text {
+    color: black;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: left;
+    }
+    
+    .pw_text {
+        color: black;
+        margin-top: 70px;
+        margin-bottom: 20px;
+        font-weight: 400;
+        font-size: 20px;
+        text-align: left;
+        }
+
+  .login_id input {
+      width: 400px;
+      height: 60px;
+      border: 1px solid #C1C1C1;
+      padding-left: 10px;
+    }
+  
+  .input_id {
+      width: 400px;
+  }
+    
+  .login_pw {
+      margin-top: 50px;
+    }
+  
+  .login_pw h3 {
+      color: black;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    
+  .login_pw input {
+      width: 400px;
+      height: 60px;
+      border: 1px solid #C1C1C1;
+      padding-left: 10px;
+    }
+  
+  .input_pw {
+      width: 400px;
+  }
+    
+  .login_etc {
+      margin-top: 20px;
+      padding: 10px;
+    }
+  
+  .login_etc h4 {
+    display :inline-block;
+    font-weight: normal;
+    margin-left: 10px;
+  }
+.checkbox input{
+    width:25px;
+    height:25px;
+}
+
+  .submit {
+      width: 400px;
+      margin-top: 80px;
+    }
+  
+  .login_next input {
+    width: 450px;
+    height: 60px;
+    border: none;
+    background-color: #566AF0;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    border: none;
+    margin-top: 50px;
+    }
+
+  .find h4 {
+    display :inline-block;
+    font-weight: normal;
+    font-size: 1em;
+    padding: 3px;
+    margin-top: 15px;
+    margin-left: 27px;
+    margin-bottom: 100px;
+  }

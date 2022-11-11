@@ -5,25 +5,31 @@ import Main from './Page/MainPage';
 import ScheduleAPlanPage from './Page/PlanPage_Mobile';
 import SelectRegion from './Page/PlanPage_selectRegion';
 import SelectDate from './Page/PlanPage_selectDate';
-import Test from './Page/Test';
 import MyPage from './Page/MyPage';
-import PlanPage from './Page/PlanPage';
 import ChatBot from './Page/Chatbot';
 
-
+import Login from './PC/component/Login/Login';
+import Terms from './PC/component/Terms/Terms';
+import Signup from './PC/page/SignupPage';
+import Plan from './PC/page/PlanPage';
+import Self from './PC/page/SelfPage';
 function App() {
   return (
     <div className="App">
       
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path='Test' element={<Test />} />
-          <Route path='Plan' element={<PlanPage />} />
           <Route path='SelectRegion' element={<SelectRegion />} />
           <Route path='SelectDate' element={<SelectDate />}/>
           <Route path='Plan_Mobile' element={<ScheduleAPlanPage />} />
           <Route path='MyPage' element={<MyPage />} />
           <Route path='Chatbot' element={<ChatBot />} />
+
+          <Route path='Login' element={<Login />} />
+          <Route path='Terms' element={<Terms />} />
+          <Route path='Signup' element={<Signup/>} />
+          <Route path='Plan' element={<Plan />} />
+          <Route path='Self' element={<Self />} />
         </Routes>
       
     </div>
