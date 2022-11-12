@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import '../DatePicker/Region_PC.css';
+import './Region_PC.css';
 import {IoIosArrowDown} from 'react-icons/io'
 import {setChosenRegion} from '../../../store';
 

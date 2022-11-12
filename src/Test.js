@@ -1,6 +1,6 @@
 import React from "react"
-import HeaderPc from '../component/Header_PC';
-import { PC, Mobile } from "../../Responsive";
+import HeaderPc from './PC/component/Header_PC';
+import { PC, Mobile } from "./Responsive";
 
 function Test() {
 

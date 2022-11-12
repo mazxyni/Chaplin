@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 import { ReactComponent as Chaplinlogo } from "./chaplin_logo.svg";
-import '../../PC/component/Header_PC.css'
+import './Header_PC.css'
 
 function HeaderPc() {
   return (

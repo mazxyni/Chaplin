@@ -1,5 +1,5 @@
 import React from 'react';
-import '../component/Footer_PC.css'
+import './Footer_PC.css'
 
 function FooterPC(){
      <div className="footer">

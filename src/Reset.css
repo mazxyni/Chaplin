@@ -23,12 +23,12 @@ body,th,td,input,select,textarea,button {font-size:14px;line-height:1.5;font-fam
 @font-face {
     font-family: "Roboto Regular";
     font-weight: 400;
-    src: url("../Font/Roboto-Regular.ttf") format("truetype");
+    src: url("./PC/Font/Roboto-Regular.ttf") format("truetype");
     }
 
     
     @font-face {
     font-family: "Roboto Bold";
     font-weight: 700;
-    src: url("../Font/Roboto-Bold.ttf") format("truetype");
+    src: url("./PC/Font/Roboto-Bold.ttf") format("truetype");
     }

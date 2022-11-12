@@ -1,7 +1,7 @@
 import { type } from '@testing-library/user-event/dist/type';
 import React from 'react';
 import { useState } from 'react';
-import '../CSS/ChatBot.css'
+import './ChatBot.css'
 
 function ChatBot() {
 

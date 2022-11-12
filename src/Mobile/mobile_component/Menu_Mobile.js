@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import '../CSS/Mobile/Header_Mobile.css'
+import './Header_Mobile.css'
 import {IoMdClose} from 'react-icons/io'
 import {MdOutlineHome} from 'react-icons/md'
 import { Link, useNavigate } from "react-router-dom"

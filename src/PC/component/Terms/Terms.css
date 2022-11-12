@@ -1,3 +1,5 @@
+@import '../../../Reset.css';
+
 .termses{
     margin-bottom: 100px;
     display: grid;

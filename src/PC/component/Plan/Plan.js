@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import styled from "styled-components";
-import HeaderPc from "../Header_PC.js";
-import Region from "../DatePicker/Region";
-import DatePicker from"../../component/DatePicker/DatePicker";
+import Region from "./Region";
+import DatePicker from"./DatePicker";
 import { BsEaselFill, BsPlus } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import {BiMinus} from 'react-icons/bi';
-import "../../component/Plan/Plan.css";
-import "../../component/Plan/Schedule.css";
-import { PC } from "../../../Responsive.js";
+import "./Plan.css";
+import "./Schedule_PC.css";
 
 const { kakao } = window;
 
@@ -199,8 +197,6 @@ function Plan()  {
   return (
     
     <div className="container">
-    {/* 헤더 */}
-    <HeaderPc />
   
       {/* 일정계획 컴포넌트 */}
       <div className="Plans">

@@ -1,6 +1,6 @@
 import React , { useState } from 'react';
 import {HiOutlineMenu} from 'react-icons/hi';
-import '../CSS/Mobile/Header_Mobile.css'
+import './Header_Mobile.css'
 import Menu from './Menu_Mobile';
 
 

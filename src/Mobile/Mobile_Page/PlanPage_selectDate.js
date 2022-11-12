@@ -1,14 +1,14 @@
 import {React, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import '../CSS/Mobile/PlanPage_Mobile.css';
-import Header from '../mobile_component/Header_Mobile.js';
+import './PlanPage_Mobile.css';
+import Header from '../mobile_component/Header_Mobile';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import dayjs from 'dayjs';
 import { ko } from "date-fns/esm/locale";
-import { setChosenStartDate, setChosenEndDate, setChosenDateArray} from '../store.js'
-import { Mobile } from '../Responsive';
+import { setChosenStartDate, setChosenEndDate, setChosenDateArray} from '../../store'
+import { Mobile } from '../../Responsive';
 
 
 

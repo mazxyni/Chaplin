@@ -1,4 +1,4 @@
-@import '../Reset.css';
+@import '../../../Reset.css';
 
 .schedule{
   position: relative;
@@ -128,4 +128,5 @@
 .add_day{
   position:absolute;
   right: 5px;
-top:20px;}
+  top:20px;
+}

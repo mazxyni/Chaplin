@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../component/Header";
-import Footer from "../component/Footer";
+import Header from "../component/Header_PC";
+import Footer from "../component/Footer_PC";
 import { Route, Link } from "react-router-dom";
 import Main1 from "../assets/images/main_1.jpg";
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './Terms.css'
+
 function Terms() {
     return(
         <div className='termses'>

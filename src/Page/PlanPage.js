@@ -1,7 +1,7 @@
 import React from 'react';
 import { PC, Mobile } from '../Responsive';
-import SelectRegion from './PlanPage_selectRegion';
-import Plan from './PlanPage_PC.js';
+import SelectRegion from '../Mobile/Mobile_Page/PlanPage_selectRegion';
+import Plan from '../PC/page/PlanPage_PC';
 
 function PlanPage() {
 

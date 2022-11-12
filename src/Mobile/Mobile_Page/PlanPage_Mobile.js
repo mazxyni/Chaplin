@@ -21,15 +21,15 @@
 */
 
 import React, { useState } from 'react'
-import '../CSS/Mobile/PlanPage_Mobile.css';
-import SearchPlace from '../mobile_component/PlanPage_Mobile/Search.js';
-import SelectSchedule from '../mobile_component/PlanPage_Mobile/SelectSchedule.js';
+import './PlanPage_Mobile.css';
+import SearchPlace from '../mobile_component/Plan/Search';
+import SelectSchedule from '../mobile_component/Plan/SelectSchedule';
 import {FiCalendar} from 'react-icons/fi';
 import {MdOutlineEditCalendar} from 'react-icons/md'
 import {BiArrowBack} from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Mobile } from '../Responsive';
+import { Mobile } from '../../Responsive';
 
 
 function ScheduleAPlanPage() {

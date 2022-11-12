@@ -1,12 +1,11 @@
 // 카카오 지도 
 /*global kakao */ 
 import React, { useEffect, useState } from 'react';
-import '../../CSS/Mobile/PlanPage_Mobile.css'
+import '../../Mobile_Page/PlanPage_Mobile.css'
 import {BsPlus} from 'react-icons/bs'
 import {BiMinus} from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
-import { setChosenPlace } from '../../store';
-import { Mobile } from '../../Responsive';
+import { setChosenPlace } from '../../../store';
 import { Link, useNavigate } from 'react-router-dom';
 
 

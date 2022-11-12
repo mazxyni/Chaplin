@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../mobile_component/Header_Mobile.js";
-import Footer from "../mobile_component/Footer_Mobile.js";
-import {chosenEndDate, chosenStartDate} from '../store.js'
+import Header from "../mobile_component/Header_Mobile";
+import Footer from "../mobile_component/Footer_Mobile";
+import {chosenEndDate, chosenStartDate} from '../../store'
 import { useSelector } from "react-redux";
-import '../CSS/Mobile/MyPage_Mobile.css'
+import '../Mobile_Page/MyPage_Mobile.css'
 import dayjs from 'dayjs';
 
 function MyPage() {

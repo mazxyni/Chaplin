@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Pc, Mobile } from "../Responsive.js";
+import { Pc, Mobile } from "../../Responsive";
 import { Link } from 'react-router-dom';
-import '../CSS/Mobile/PlanPage_Mobile.css';
+import './PlanPage_Mobile.css';
 import Header from '../mobile_component/Header_Mobile';
 import {IoIosArrowDown} from 'react-icons/io'
 import { useDispatch, useSelector } from 'react-redux';
-import {setChosenRegion} from '../store.js'
+import {setChosenRegion} from '../../store'
 
 function SelectRegion () {
     let [region, setRegion] = useState([

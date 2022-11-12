@@ -1,5 +1,5 @@
 import React from "react";
-import '../CSS/Mobile/Footer_Mobile.css'
+import './Footer_Mobile.css'
 
 function FooterMobile() {
 
