@@ -1,0 +1,122 @@
+.termses{
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+  }
+
+  .signup_ko {
+        color: rgb(0, 0, 0);
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 80px;
+  }
+  
+  .signup_eng {
+      color: gray;
+      font-weight: normal;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 3px;
+      }
+      .sub_title {
+        text-align: center;
+        margin-top: 30px;
+        color: rgb(77, 76, 76);
+        font-size: 18px;
+        font-weight: 500;
+      }
+  
+  .terms_text{
+    color: black;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .terms_box{
+    border: solid 1px #C1C1C1;
+    padding: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+    margin-top: 12px;
+    height: 620px;
+  }
+  .first_check{
+    text-align: right;
+  }
+  h4{
+    display :inline-block;
+    font-weight: normal;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .check_1{
+    width:25px;
+    height:25px;
+    text-align: right;
+  }
+  
+  .terms_text2{
+    color: black;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .terms_box2{
+    border: solid 1px #C1C1C1;
+    padding: 20px;
+    overflow: hidden;
+    overflow-y: auto;
+    margin-top: 12px;
+    height: 620px;
+  }
+  .second_check{
+    text-align: right;
+  }
+ 
+  .third_check{
+    text-align: center;
+    line-height: 110px;
+    margin-top: 30px;
+    font-size: 20px;
+    background-color: #F5F5F5;
+    height: 105px;
+  }
+
+  .red_text{
+    color: red;
+    display: inline-block;
+  }
+
+  .red_star{
+    color: red;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  .term_next input{
+    width: 464px;
+    height: 60px;
+    border: none;
+    background-color: #566AF0;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    border: none;
+    margin-top: 50px;
+    display:block;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .term_next{
+    margin-top: 50px;
+  }

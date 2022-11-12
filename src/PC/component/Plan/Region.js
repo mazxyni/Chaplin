@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import '../../CSS/PC/Region_PC.css'
+import '../DatePicker/Region_PC.css';
 import {IoIosArrowDown} from 'react-icons/io'
-import {setChosenRegion} from '../../store.js'
+import {setChosenRegion} from '../../../store';
 
 function Region(props) {
     let [region, setRegion] = useState([

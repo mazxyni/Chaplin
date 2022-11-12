@@ -25,7 +25,6 @@
   height: 100%;
   margin: 0 auto;
   line-height: 100px;
-  z-index: 2;
 
 }
 #chaplinlogo {
@@ -33,15 +32,15 @@
   padding-top: 10px;
 }
 .sign{
-position:absolute;
-right: 20px;
-display: flex;
-font-size: 14px;
-}
-.header_login {
-margin: 10px;
-}
-
-.header_signup {
+  position:absolute;
+  right: 20px;
+  display: flex;
+  font-size: 14px;
+  }
+  .header_login {
   margin: 10px;
-} 
+  }
+  
+  .header_signup {
+    margin: 10px;
+  } 
