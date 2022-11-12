@@ -56,23 +56,23 @@ function DatePicker ( props, start, end, blockedDates, gapBetweenMonth ) {
         }
       }
     return dispatch(setChosenDateArray(DateArray));
-    
-};
+  };
+
   const isBlocked = day => {
     let result = false;
 
-  // Case #1. 시작, 끝 날짜 둘 다 선택
-  if (startDate !== null && endDate !== null) {
-    result = blockedDate?.some(date => day.format("YYYYMMDD") === date) || day.isBefore(moment().subtract(1, "days"));
-    return result;
+    // Case #1. 시작, 끝 날짜 둘 다 선택
+    if (startDate !== null && endDate !== null) {
+      result = blockedDate?.some(date => day.format("YYYYMMDD") === date) || day.isBefore(moment().subtract(1, "days"));
+      return result;
 
-    // Case #2. 둘다 선택 되지 않음.
-  } else {
-    result = blockedDate?.some(date => day.format("YYYYMMDD") === date) || day.isBefore(moment().subtract(1, "days"));
-    return result;
-  }
+      // Case #2. 둘다 선택 되지 않음.
+    } else {
+      result = blockedDate?.some(date => day.format("YYYYMMDD") === date) || day.isBefore(moment().subtract(1, "days"));
+      return result;
+    }
 
-};
+  };
 
   return (
     <>

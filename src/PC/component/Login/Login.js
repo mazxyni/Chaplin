@@ -2,54 +2,56 @@ import React from 'react';
 import "./Login.css";
 import { Link } from "react-router-dom";
 
-const Login = () => (
-    <div className='Logins'>
+function Login() {
+    return(
+        <div className='Logins'>
 
-        <div className='login_left'></div>
+            <div className='login_left'></div>
 
-        <div className='login'>
+            <div className='login'>
 
-            <div className="login_text">로그인</div>
-            <div className="eng">Login</div>
+                <div className="login_text">로그인</div>
+                <div className="eng">Login</div>
 
-            <div className="login_id">
-                <div className="id_text">아이디</div>
-                <div className='input_id'>
-                <input type="id" name="" id="" />
+                <div className="login_id">
+                    <div className="id_text">아이디</div>
+                    <div className='input_id'>
+                    <input type="id" name="" id="" />
+                    </div>
                 </div>
-            </div>
 
-            <div className="login_pw">
-            <div className="pw_text">비밀번호</div>
-                <div className='input_pw'>
-                <input type="password" name="" id="" />
+                <div className="login_pw">
+                <div className="pw_text">비밀번호</div>
+                    <div className='input_pw'>
+                    <input type="password" name="" id="" />
+                    </div>
                 </div>
-            </div>
 
-            <div class="login_etc">
-                <div class="checkbox">
-                <input type="checkbox" name="" id="" />
-                    <h4>로그인 상태 유지</h4>
+                <div class="login_etc">
+                    <div class="checkbox">
+                    <input type="checkbox" name="" id="" />
+                        <h4>로그인 상태 유지</h4>
+                    </div>
                 </div>
+
+                <div class="login_next">
+                <Link to="/"><input type="submit" value="로그인" /></Link>
+                </div>
+
+                <div class="find">
+                    <h4>아이디 찾기</h4>
+                    <h4>|</h4>
+                    <h4>비밀번호 찾기</h4>
+                    <h4>|</h4>
+                    <h4>회원가입</h4>
+                </div>
+
             </div>
 
-            <div class="login_next">
-            <Link to="/"><input type="submit" value="로그인" /></Link>
-            </div>
-
-            <div class="find">
-                <h4>아이디 찾기</h4>
-                <h4>|</h4>
-                <h4>비밀번호 찾기</h4>
-                <h4>|</h4>
-                <h4>회원가입</h4>
-            </div>
+            <div className='login_right'></div>
 
         </div>
-
-        <div className='login_right'></div>
-
-    </div>
-)  
+    )  
+}
 
 export default Login;
