@@ -60,6 +60,8 @@ public class UserService {
             origin.setUsrEm(user.getUsrEm());
         } else if (user.getUsrEm() != null) {
             origin.setUsrEm(user.getUsrEm());
+        } else if (user.getUsrRole() != null) {
+            origin.setUsrRole(user.getUsrRole());
         }
         return userRepository.save(origin);
     }
