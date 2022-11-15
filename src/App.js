@@ -18,7 +18,8 @@ import SelfPage from './PC/page/SelfPage';
 
 
 function App() {
-  // const [user, setUser] = useState("");
+  // const [user, setUser] = useState('');
+
   // useEffect(() => {
   //   axios.post("/api/users").then((response) => {
   //     if (response.data) {

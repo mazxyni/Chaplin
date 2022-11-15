@@ -1,6 +1,6 @@
 import { type } from '@testing-library/user-event/dist/type';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './ChatBot.css'
 
 function ChatBot() {
@@ -16,7 +16,12 @@ function ChatBot() {
       
   }
 
+  useEffect(() => {
+    //evnetQuery();
+  }, [])
+
   // 채팅을 시작할 때 나오는 고정 메세지
+
   const evnetQuery = () => {
 
 

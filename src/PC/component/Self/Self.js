@@ -1,7 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import './Self.css'
+import axios from 'axios';
+
 function Self() {
+
+    const [phoneNumber, setPhone] = useState('');
+
+    const onChange = (e) => {
+        setPhone(e.target.value);
+        //console.log(InputText);
+    }
+    const submitHandler = (e) => {
+        //console.log(phoneNumber);
+        axios.get('/sms', phoneNumber).then((result)=>{
+            if (result.data) {
+                console.log(result.data)
+            } else {
+                alert("failed to");
+            }
+        });
+    }
+
     return(
         <div className='selves'>
         <div className='self_left'></div>
@@ -15,10 +35,8 @@ function Self() {
 
         <div class="phone">
         <div className="phone_text">전화번호 <div className='red_star'>*</div></div>
-            <input type="name" className="input_phone" placeholder="전화번호를 입력하세요."/>
-            <div className='phone_button'>
-            <Link to="#"><input type="submit" value="인증요청" /></Link>
-            </div>
+            <input type="name" className="input_phone" placeholder="전화번호를 입력하세요." onChange={onChange} value={phoneNumber}/>
+            <button type="submit" className='phone_button' onClick={submitHandler}>인증요청</button>
         </div>
 
         <div class="num">
@@ -36,6 +54,8 @@ function Self() {
         
         <div className='self_right'></div>
         </div>
+
+        
     )  
 }
 
