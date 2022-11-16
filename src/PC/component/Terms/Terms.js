@@ -1,8 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import './Terms.css'
 
 function Terms() {
+    const [checkAll, setCheckAll] = useState(false); // 모두 동의 시
+    const [checkArr, setCheckArr] = useState([]); // 체크 박스 array
+    console.log("all " + checkAll);
+    //console.log("1 " + check1);
+    
+
+    // 모두 동의 체크박스를 눌렀을 때
+    const isCheckAll = (e) => {
+        //console.log(e.target.checked);
+        if (e.target.checked) { //true
+            setCheckAll(true);
+            setCheckArr([1,2]);
+            
+        }else{ // false
+            setCheckAll(false);
+            setCheckArr([]);
+        }
+    }
+
+    // 각 체크박스를 눌렀을 때
+    const isCheck = (e, id) => { 
+        //console.log(id);
+        if(e.target.checked) { // true
+            let copy = checkArr;
+            setCheckArr([...copy, id]);
+        }else{ //false
+            setCheckAll(false);
+            setCheckArr([]);
+            let copy = checkArr;
+            setCheckArr(copy.filter(el => el!=id));
+
+        }
+    }
+
+
+
     return(
         <div className='termses'>
             <div className='terms_left'></div>
@@ -161,7 +197,7 @@ function Terms() {
                 </div>
 
                 <div className='first_check'>
-                    <input type="checkbox" className='check_1'/> <h4>이용약관에 동의합니다.</h4>
+                    <input type="checkbox" className='check_1' onClick={(e) => {isCheck(e, 1)}} checked={checkArr.includes(1)? true:false}/> <h4>이용약관에 동의합니다.</h4>
                 </div>
                 
                 <div className="terms_text2">개인정보 수집 및 이용에 대한 안내 <div className='red_star'>*</div></div>    
@@ -308,20 +344,27 @@ function Terms() {
                 </div>
 
                 <div className='second_check'>
-                    <input type="checkbox" className='check_1'/> <h4>이용약관에 동의합니다.</h4>
+                    <input type="checkbox" className='check_1' onClick={(e) => {isCheck(e, 2)}} checked={checkArr.includes(2)? true:false}/> <h4>이용약관에 동의합니다.</h4>
                 </div>
 
                 <div className='third_check'>
-                    <input type="checkbox" className='check_1'/>  채플린의 <div className='red_text'>가입약관</div>에 모두 동의합니다 
+                    <input type="checkbox" className='check_1' onClick={isCheckAll} checked={checkAll == true? true:false}/>  채플린의 <div className='red_text'>가입약관</div>에 모두 동의합니다 
                 </div>
         
                 <div class="term_next">
-                    <Link to="/self"><input type="submit" value="휴대폰으로 본인인증하기" /></Link>
+                    {checkAll ==true? (<Link to="/self"><button>휴대폰으로 본인인증하기</button></Link>):(
+                        <button onClick={()=>{alert("약관에 동의해주세요.")}}>휴대폰으로 본인인증하기</button>
+                    )}
+                    
                 </div>
+
+                
 
                 <div className='signup_right'></div>
             </div>
+            
         </div>
+
     );
 } 
 

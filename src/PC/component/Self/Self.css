@@ -127,7 +127,7 @@
     margin-top: 100px;
   }
 
-  .phone_button{
+  .phone_button input{
     position: relative;
     top:23px;
     left:400px;
