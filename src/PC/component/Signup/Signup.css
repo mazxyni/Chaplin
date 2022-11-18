@@ -32,6 +32,7 @@
       font-weight: 500;
     }
 
+
 .id_text{
   color: black;
   margin-top: 70px;
@@ -40,20 +41,33 @@
   font-size: 20px;
   text-align: left;
 }
+
+.button_id{
+  position: relative;
+  left: -70px;
+  background-color: white;
+  color:#566AF0;
+  border: none;
+  font-weight: bold;
+}
+
 .input_id{
   width: 450px;
   height: 60px;
   padding-left: 10px;
+  position: relative;
 }
 .input_pw{
   width: 450px;
   height: 60px;
   padding-left: 10px;
+  position: relative;
 }
 .input_pw_confirm{
   width: 450px;
   height: 60px;
   padding-left: 10px;
+  position: relative;
 }
 .confirm_text{
   color: black;
@@ -99,22 +113,7 @@
   height: 60px;
   padding-left: 10px;
 }
-.birth{
-  width:450px;
-}
-.birth_text{
-  color: black;
-  margin-top: 70px;
-  margin-bottom: 20px;
-  font-weight: 400;
-  font-size: 20px;
-  text-align: left;
-}
-.input_birth{
-  width: 450px;
-  height: 60px;
-  padding-left: 10px;
-}
+
 .gender_text{
   color: black;
   margin-top: 70px;
