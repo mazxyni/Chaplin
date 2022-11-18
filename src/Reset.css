@@ -17,8 +17,27 @@ input:checked[type='checkbox'] {background-color:#666; -webkit-appearance:checkb
 button,input[type='button'],input[type='submit'],input[type='reset'],input[type='file'] {-webkit-appearance:button; border-radius:0}
 body {min-width:320px;background-color:#fff}
 body,th,td,input,select,textarea,button {font-size:14px;line-height:1.5;font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;}
-
-
+a {
+    color: #333;
+    text-decoration: none;
+  }
+  a:active,
+  a:hover {
+    text-decoration: none;
+  }
+  .show {
+    display: block;
+  }
+  .hide {
+    display: none;
+  }
+  body {
+    -ms-overflow-style: none;
+  }
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
 /* 로보토 */
 @font-face {
     font-family: "Roboto Regular";

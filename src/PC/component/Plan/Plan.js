@@ -226,7 +226,7 @@ function Plan()  {
             {/* 내 일정 */}
             <div className="place">
               <div className="planner">
-                <p>일정표</p>
+                일정표
               </div>
 
               {chosenDateArray != null ? (<div className="dateArray">
@@ -237,7 +237,7 @@ function Plan()  {
                     {addPlace.map((item2, j) => (
                       <div key={j}>
                         {addPlace[j].num == i ? (
-                        <div className='MyPlace-list' style={{color:'#000'}}>
+                        <div className='MyPlace-list' style={{color:'black',fontSize:'16px'}}>
                           <div style={{display:'flex', margin:'5px'}}>
                             <h4 style={{marginRight:'16px', fontWeight:'700'}}>{item2.place.place_name}</h4>
                             <span style={{marginLeft : 'auto'}} onClick={() => {
@@ -250,9 +250,9 @@ function Plan()  {
                         {console.log(item2)}
                         <div style={{fontWeight:'400', fontSize:'14px', margin:'10px 5px', textAlign:'left'}}>
                             {item2.place.road_address_name ? (
-                            <p >{item2.place.road_address_name}</p>
+                            <div className="list_address">{item2.place.road_address_name}</div>
                             ) : (
-                            <p>{item2.place.address_name}</p>
+                              <div className="list_address">{item2.place.address_name}</div>
                             )}
                         </div>
 

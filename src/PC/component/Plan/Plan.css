@@ -33,7 +33,6 @@ body {
   margin: 0 10px;
   position: relative;
   overflow: hidden;
-  
 }
 .searchbtn {
   position: absolute;
@@ -95,4 +94,8 @@ body {
 }
 .MyPlanButtonOpen {
   left: 3px;
+}
+.list_address{
+  font-size: 16px;
+  margin-left: 10px;
 }
