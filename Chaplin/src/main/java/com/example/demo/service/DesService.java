@@ -14,7 +14,7 @@ public class DesService {
 
     private final DesRepository desRepository;
 
-    public Destination saveDestination(Destination destination, Plan plan){
+    public Destination saveDestination(Destination destination, Plan plan) {
         destination.setPlan(plan);
         return desRepository.save(destination);
     }

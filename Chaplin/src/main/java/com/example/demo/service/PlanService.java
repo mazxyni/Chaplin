@@ -37,10 +37,22 @@ public class PlanService {
     public Plan updatePlan(Integer plnSq, Plan plan) {
         Plan origin = planRepository.findById(plnSq).get(); //sq로 플랜 찾아오기
 
-        plan.setPlnSq(origin.getPlnSq()); //기존 sq를 업데이트할 plnSq로 설정
+        plan.setPlnSq(origin.getPlnSq()); // 기존 sq를 업데이트할 plnSq로 설정
         // 이 부분도 필요한 필드만 if문 처리해서 수정할 수 있도록 해야합니다 (userService 참고)
 
-        return planRepository.save(plan); //저장
+        if (plan.getPlnNm() != null) {
+            origin.setPlnNm(plan.getPlnNm());
+        } else if (plan.getPlnSDd() != null) {
+            origin.setPlnSDd(plan.getPlnSDd());
+        } else if (plan.getPlnFDd() != null) {
+            origin.setPlnFDd(plan.getPlnFDd());
+        } else if (plan.getMetropolitan() != null) {
+            origin.setMetropolitan(plan.getMetropolitan());
+        } else if (plan.getCity() != null) {
+            origin.setCity(plan.getCity());
+        }
+
+        return planRepository.save(origin); //저장
     }
 
     public int deletePlan(Integer plnSq) {

@@ -4,6 +4,7 @@ import com.example.demo.model.City;
 import com.example.demo.model.Metropolitan;
 import com.example.demo.service.CityService;
 import com.example.demo.service.MetService;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

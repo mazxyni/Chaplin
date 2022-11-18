@@ -47,7 +47,7 @@ public class UserService {
 
     @Transactional
     public User updateUser(Integer usrSq, User user) {
-        User origin = userRepository.findById(usrSq).get();
+        User origin = userRepository.findById(usrSq).get(); // sq로 회원 찾아오기
 
         if (user.getUsrId() != null) {
             validateDuplicateUserId(user); // 아이디 중복확인
