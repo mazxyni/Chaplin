@@ -15,7 +15,7 @@ import LoginPage from './PC/page/LoginPage';
 import TermsPage from './PC/page/TermsPage';
 import SignupHome from './PC/page/SignupPage';
 import SelfPage from './PC/page/SelfPage';
-
+import MainPage from './PC/page/MainPage';
 
 function App() {
   // const [user, setUser] = useState('');
@@ -35,7 +35,7 @@ function App() {
     <div className="App">
         {/* <h1>{user.usrNm}</h1> */}
         <Routes>
-          <Route path='/' element={<Main />} />
+          <Route path='/' element={<MainPage/>} />
           <Route path='SelectRegion' element={<SelectRegion />} />
           <Route path='SelectDate' element={<SelectDate />}/>
           <Route path='Plan_Mobile' element={<ScheduleAPlanPage />} />

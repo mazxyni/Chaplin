@@ -324,6 +324,7 @@ function Plan()  {
                 );
               })}
             </div>
+         
             {/* 페이지 이동 */}
             <PagenationFooterContainer>
               {/* 이전버튼 */}
@@ -345,6 +346,7 @@ function Plan()  {
               </RightIconWrapper>
             </PagenationFooterContainer>
           </div>
+         
           </SearchPlaceContainer>
         </div>
       </div>
