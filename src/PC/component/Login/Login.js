@@ -65,21 +65,17 @@ function Login() {
 
                 <div className="login_id">
                     <div className="id_text">아이디</div>
-                    <div className='input_id'>
-                    <input type="text" onChange={onIdHandler} />
-                    </div>
+                    <input type="id"/>
                 </div>
 
                 <div className="login_pw">
                 <div className="pw_text">비밀번호</div>
-                    <div className='input_pw'>
-                    <input type="password" onChange={onPwHandler} />
-                    </div>
+                    <input type="password" />
                 </div>
 
                 <div class="login_etc">
                     <div class="checkbox">
-                    <input type="checkbox" onClick={onLoginHandler}/>
+                    <input type="checkbox" />
                         <h4>로그인 상태 유지</h4>
                     </div>
                 </div>
