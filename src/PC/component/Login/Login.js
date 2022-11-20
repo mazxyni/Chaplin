@@ -65,12 +65,12 @@ function Login() {
 
                 <div className="login_id">
                     <div className="id_text">아이디</div>
-                    <input type="id"/>
+                    <input type="text" onChange={onIdHandler}/>
                 </div>
 
                 <div className="login_pw">
                 <div className="pw_text">비밀번호</div>
-                    <input type="password" />
+                    <input type="password" onChange={onPwHandler} />
                 </div>
 
                 <div class="login_etc">
