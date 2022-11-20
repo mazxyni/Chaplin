@@ -213,7 +213,7 @@ function Plan()  {
               </div>
               <div className="area"></div>
               <div className="date">
-                <button className="date" onClick = {() =>  {setDateButton(true)}}>
+                <button className="date" onClick = {() =>  {setDateButton(true); setRegionButton(false);}}>
                   {selectStartDate == null ? ("날짜를 선택하세요."):(
                     selectEndDate == null ? (selectStartDate):(selectStartDate +' ~ '+ selectEndDate))}
                 </button>

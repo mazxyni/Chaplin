@@ -13,6 +13,7 @@ function Signup() {
     const [gender, setGender] = useState('');
 
     const email = emailFirst != '' &&  emailSelect != '' ? (emailFirst + "@" + emailSelect) : ('');
+    const user_role = 'ROLE_USER';
 
     const [isId, setIsId] = useState(false);
     const [isPw, setIsPw] = useState(false);
@@ -92,11 +93,15 @@ function Signup() {
 
 
     const onGenderHandler = (e) => {
-        setGender(e.target.value);
         if(!e.target.value) {
             setIsGender(true);
         }else{
             setIsGender(false);
+            if (e.target.value == '여자') {
+                setGender('0');
+            }else{
+                setGender('1');
+            }
         }
     }
 
@@ -126,12 +131,12 @@ function Signup() {
 
     function signPost() {
         axios.post('/usr', {
-            usr_id: id,
-            usr_pw: pw,
-            usr_nm: name,
-            usr_gn: gender,
-            usr_em: email,
-            usr_role: 'ROLE_USER'
+            usrId: id,
+            usrPw: pw,
+            usrNm: name,
+            usrGn: gender,
+            usrEm: email,
+            usrRole: user_role
         }).then(function (response) {
             console.log(response.data);
         }).catch(function (error) {
@@ -140,7 +145,7 @@ function Signup() {
     }
 
     function duplicateId () {
-        axios.get('/usr/{id}', {
+        axios.post('', {
             params:{
                 'id' : id
             }
@@ -215,8 +220,8 @@ function Signup() {
             </div>
 
             <div class="signup_next ">
-            {isId == false && isPw == false && (pw == confirmPw) == true && (email != '') == true && isName == false && isGender == false ?
-            (<Link to="/login"><input type="submit" value="확인" onClick={signPost}/></Link>) : (
+            {!isId && !isPw && pw == confirmPw && email != '' && !isName && !isGender ?
+            (<Link to="#"><input type="submit" value="확인" onClick={signPost}/></Link>) : (
                 <input type="submit" value="확인" onClick={onSubmitHandler} />
             )}</div>
             

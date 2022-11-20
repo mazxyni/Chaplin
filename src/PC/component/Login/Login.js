@@ -1,8 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Login.css";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 function Login() {
+    const [id, setId] = useState('');
+    const [pw, setPw] = useState('');
+
+    const [isId, setIsId] = useState(true);
+    const [isPw, setIsPw] = useState(true);
+    const [isLogin, setIsLogin] = useState(false);
+
+    const onIdHandler = (e) => {
+        setId(e.target.value);
+        if(!e.target.value) {
+            setIsId(true);
+        }else{
+            setIsId(false);
+        }
+    }
+
+    const onPwHandler = (e) => {
+        setPw(e.target.value);
+        if(!e.target.value) {
+            setIsPw(true);
+        }else{
+            setIsPw(false);
+        }
+    }
+
+    const onLoginHandler = (e) => {
+        setIsLogin(e.target.cheked);
+    }
+
+    const onSubmitHandler = () => {
+        if(isId) {
+            alert('아이디를 입력하세요.');
+        }
+        else if(isPw) {
+            alert('비밀번호를 입력하세요');
+        }
+    }
+
+    function userLogin() {
+        axios.post('/api/login', {
+            usrId : id,
+            usrPw: pw
+        }).then(function (response) {
+            console.log(response.data);
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
+
     return(
         <div className='Logins'>
 
@@ -16,26 +66,29 @@ function Login() {
                 <div className="login_id">
                     <div className="id_text">아이디</div>
                     <div className='input_id'>
-                    <input type="id" name="" id="" />
+                    <input type="text" onChange={onIdHandler} />
                     </div>
                 </div>
 
                 <div className="login_pw">
                 <div className="pw_text">비밀번호</div>
                     <div className='input_pw'>
-                    <input type="password" name="" id="" />
+                    <input type="password" onChange={onPwHandler} />
                     </div>
                 </div>
 
                 <div class="login_etc">
                     <div class="checkbox">
-                    <input type="checkbox" name="" id="" />
+                    <input type="checkbox" onClick={onLoginHandler}/>
                         <h4>로그인 상태 유지</h4>
                     </div>
                 </div>
 
                 <div class="login_next">
-                <Link to="/"><input type="submit" value="로그인" /></Link>
+                {!isId  && !isPw ? 
+                (<Link to="#"><input type="submit" value="로그인" onClick={userLogin} /></Link>):(
+                    <input type="submit" value="로그인" onClick={onSubmitHandler}/>
+                )}
                 </div>
 
                 <div class="find">
