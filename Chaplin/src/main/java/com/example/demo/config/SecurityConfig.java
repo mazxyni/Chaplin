@@ -4,6 +4,7 @@ import com.example.demo.config.auth.PrincipalDetailsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -45,6 +46,7 @@ public class SecurityConfig {
                 // user 페이지 설정
                 .antMatchers("/mypage/**").authenticated() // 로그인 필요
                 .antMatchers("/pln/**").authenticated() // 로그인 필요
+                .mvcMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 // 기타 url은 모두 허용
                 .anyRequest().permitAll()
                 .and()
