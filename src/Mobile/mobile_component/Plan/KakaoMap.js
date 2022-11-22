@@ -235,8 +235,8 @@ function KakaoMap({ searchPlace }) {
                 {button == true ? (<div className='MyPlanDay'> 
                 
                     {chosenDateArray.map((item, i) => (
-                    <div key={i} className={'MyPlanDay-list' + (i == DayButton ? 'active': '')}>
-                        <div onClick={() => {setDayButton(i); console.log(i)}}>Day {i + 1}</div>
+                    <div key={i} className={'MyPlanDay-list' + (i == DayButton ? 'active': '')} style={{ width:'50px', textAlign :'center'}}>
+                        <div onClick={() => {setDayButton(i); console.log(i)}} >Day {i + 1}</div>
                     </div>))} 
                 </div>) : (null)}
 
