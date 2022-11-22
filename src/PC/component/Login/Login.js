@@ -43,7 +43,7 @@ function Login() {
     }
 
     function userLogin() {
-        axios.post('/api/login', {
+        axios.post('/login', {
             usrId : id,
             usrPw: pw
         }).then(function (response) {

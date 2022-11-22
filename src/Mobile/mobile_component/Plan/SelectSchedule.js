@@ -11,6 +11,8 @@ function SelectSchedule() {
     
     const navigate = useNavigate();
 
+    console.log(chosenEndDate)
+
     return (
         <div className="ChosenSchedule">
 
@@ -21,7 +23,7 @@ function SelectSchedule() {
 
             <div className="ChosenDate" onClick={() => {navigate('/SelectDate')}}>
                 {chosenStartDate == null? (<>날짜를 선택하세요.</>):(
-                <>{chosenStartDate} ~ {chosenEndDate}</>)}
+                chosenEndDate == 'Invalid Date' ? (<>{chosenStartDate}</>) : (<>{chosenStartDate} ~ {chosenEndDate}</>))}
             </div>
         </div>
 

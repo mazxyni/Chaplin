@@ -11,6 +11,7 @@
 
 /* 프로필 수정 버튼 */
 .profileModifyButton_mb {
+    margin-left: 173px;
     margin-top:20px;
     margin-bottom:30px;
 }
@@ -19,6 +20,7 @@
 .MyPlanP_mb {
     font-size:14px;
     font-weight:700;
+    text-align: center;
     text-decoration :underline;
     text-underline-offset:5px;
     text-decoration-color:#566AF0;

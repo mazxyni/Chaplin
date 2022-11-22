@@ -25,8 +25,10 @@ function SelectDate () {
         //console.log(dayjs(startDate).format('YYYYMMDD'));
         //console.log(dayjs(endDate).format('YYYYMMDD'));
         //console.log(chosenDateArray)
+        
         dispatch(setChosenStartDate(dayjs(startDate).format('YYYY-MM-DD')));
         dispatch(setChosenEndDate(dayjs(endDate).format('YYYY-MM-DD')));
+        
         //dispatch(setChosenDateArray())
     }
 

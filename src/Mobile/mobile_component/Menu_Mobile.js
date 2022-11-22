@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import './Header_Mobile.css'
+
+import { Link, useNavigate } from "react-router-dom"
 import {IoMdClose} from 'react-icons/io'
 import {MdOutlineHome} from 'react-icons/md'
-import { Link, useNavigate } from "react-router-dom"
 
 
 function Menu(props) {
@@ -11,13 +12,15 @@ function Menu(props) {
 
     const navigate = useNavigate();
 
+
     return(
         <div className="menuModal">
             <div className="menuHeader">
                 <MdOutlineHome className="home" size={25}/>
                 <IoMdClose className='close' size={25} onClick={() => {props.setMenu(false)}}/>
             
-            </div>
+        </div>
+
             <div className="menuLoginOut">
                 <p style={{marginRight:'20px'}}>{logOut[0]}</p>
                 <p>{logOut[1]}</p>

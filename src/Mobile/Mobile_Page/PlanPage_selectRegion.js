@@ -29,6 +29,8 @@ function SelectRegion () {
         {num:'제주특별자치도', value:['전체', '제주시', '서귀포시']},
     ]);
 
+    const chosenMetro = useSelector((state) => state.region.Metro);
+
     let [metroButton, setMetroButton] = useState(false);
     let [cityButton, setCityButton] = useState(false);
     let [selected, setSelected] = useState({Metro:'전체', City:'전체'});
@@ -103,9 +105,16 @@ function SelectRegion () {
                                 </div>
                         </div>
                     </div>
-                    <Link to='/SelectDate'>
-                        <div className='SelectButton-Region_mb' onClick={() => {dispatch(setChosenRegion(selected))}}>적용하기</div>
-                    </Link>
+                    {chosenMetro ? (
+                        <Link to='/Plan_Mobile'>
+                            <div className='SelectButton-Region_mb' onClick={() => {dispatch(setChosenRegion(selected))}}>적용하기</div>
+                        </Link>
+                    ):(
+                        <Link to='/SelectDate'>
+                            <div className='SelectButton-Region_mb' onClick={() => {dispatch(setChosenRegion(selected))}}>적용하기</div>
+                        </Link>
+                    )}
+                    
                 </div>
             </div>
             </Mobile>

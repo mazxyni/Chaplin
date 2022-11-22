@@ -58,6 +58,7 @@ let schedule = createSlice({
   initialState : [],
   reducers : {
     setSchedule(state, action) {
+      //console.log(action.payload)
       return action.payload
     }
   }
@@ -70,7 +71,7 @@ let chosenPlace = createSlice({
   initialState : [],
   reducers : {
     setChosenPlace(state, action) {
-      console.log(action.payload)
+      //console.log(action.payload)
       return action.payload
     }
   }

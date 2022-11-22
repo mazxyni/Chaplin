@@ -5,8 +5,9 @@ import '../../Mobile_Page/PlanPage_Mobile.css'
 import {BsPlus} from 'react-icons/bs'
 import {BiMinus} from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
-import { setChosenPlace } from '../../../store';
+import { setChosenPlace, setSchedule } from '../../../store';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 const { kakao } = window;
@@ -14,20 +15,55 @@ const { kakao } = window;
 
 function KakaoMap({ searchPlace }) {
     const [Places, setPlaces] = useState([]) // 검색 결과 
-    let [add, setAdd] = useState(false) // true일 때 일정표에 추가, false일 때 냅두기
-    let [button, setButton] = useState(true); // true일 때 내 일정 열림 , false일 때 내 일정 닫힘
-    let [addPlace, setAddPlace] = useState([]); // 일정표 목적지 배열, {num : DayButton(일차), place: 목적지}  
-    let [DayButton, setDayButton] = useState(0); // 일차 배열 값 위치, 기본값 0번째
-    
+    const [add, setAdd] = useState(false) // true일 때 일정표에 추가, false일 때 냅두기
+    const [button, setButton] = useState(true); // true일 때 내 일정 열림 , false일 때 내 일정 닫힘
+    const [usrPlan, setUsrPlan] = useState([]);
+    const [addPlace, setAddPlace] = useState([]); // 일정표 목적지 배열 
+    const [DayButton, setDayButton] = useState(0); // 일차 배열 값 위치, 기본값 0번째
+    const [plnSq, setPlnSq] = useState(0);
     
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const chosenDateArray = useSelector((state) => state.chosenDateArray) // 일차 배열
+    const chosenStartDate = useSelector((state) => state.chosenStartDate)
+    const chosenEndDate = useSelector((state) => state.chosenEndDate != 'Invalid Date' ? state.chosenEndDate : null)
     const chosenMetro = useSelector((state) => state.region.Metro)
     const chosenCity = useSelector((state) => state.region.City)
     
     //console.log('맵' + chosenStartDate, chosenEndDate)
-    //console.log(chosenDateArray)
+    //console.log(chosenDateArray[DayButton])
+    console.log(usrPlan);
+    console.log(addPlace);
+    const usr = 1;
+    let planNum = 0;
+
+    let plan = [{plnSq: 1, user: usr, metropolitan:chosenMetro, city:chosenCity, planNm:'', plnSDd:chosenStartDate, plnFDd:chosenEndDate},
+    {plnSq: 2, user: usr, metropolitan:'제주특별자치도', city:'서귀포시', planNm:'', plnSDd:'2023-1-1', plnFDd:'2023-1-3'}];
+    //let plan = null;
+    
+
+     useEffect(() => {
+    //     axios.get('/api/pln', {
+    //         usrId : 'chaplinuser'
+    //     }).then((response) => {
+    //         if(response.data) {
+    //             console.log(response.data);
+    //         }else {
+    //         }
+    //     }).catch((error) => {
+    //         console.log(error);
+    //     })
+        console.log(plan);
+        if (plan) {
+            console.log(plan.at(-1).plnSq);
+            planNum = plan.at(-1).plnSq + 1;
+            console.log(planNum);
+            // planNum += 1;
+        }else {
+            planNum = 1;
+            console.log(planNum);
+        }
+     },[])
 
 
     useEffect(() => {
@@ -91,8 +127,49 @@ function KakaoMap({ searchPlace }) {
             }
 
         });
+
         
     }, [searchPlace]);
+
+
+    useEffect(() => {
+
+        if (chosenEndDate) {
+        setUsrPlan(() => {return[...usrPlan ,{
+            plnSq : planNum,
+            usrId : 'chaplinuser' ,
+            metropolitan : chosenMetro,
+            city: chosenCity,
+            plnSDd: chosenStartDate,
+            plnFDd: chosenEndDate
+        }]});
+        }else{
+            setUsrPlan(() => {return[...usrPlan ,{
+                plnSq : planNum,
+                usrId : 'chaplinuser' ,
+                metropolitan : chosenMetro,
+                city: chosenCity,
+                plnSDd: chosenStartDate
+            }]});
+        }
+
+    }, [chosenStartDate, chosenEndDate, chosenMetro, chosenCity])
+
+
+    function savePlan() {
+        // axios.post('/api/pln', usrPlan).then((response) => {
+        //     console.log(response.data);
+            
+        // }).catch(function(error) {
+        //     console.log(error);
+        // });
+        dispatch(setSchedule(usrPlan));
+        dispatch(setChosenPlace(addPlace));
+        
+        
+
+    }
+    
 
     return (
         <div>
@@ -122,8 +199,19 @@ function KakaoMap({ searchPlace }) {
                                 // let copy = [...addPlace]; addPlace배열 카피본 만들기
                                 // copy.push(item); 선택한 item 배열에 넣기
                                 // setAddPlace(copy); addPlace 변경
-                                setAddPlace(() => {return[...addPlace, {num: DayButton, place: item}]})// 추가한 결과 배열에 넣기
-                                // console.log(addPlace);
+                                setAddPlace(() => {return[...addPlace, 
+                                    {
+                                        num : DayButton,
+                                        plnSq : planNum,
+                                        metropolitan : chosenMetro,
+                                        city : chosenCity,
+                                        desDd : chosenDateArray[DayButton],
+                                        desLat : item.y,
+                                        desLong : item.x,
+                                        desNm : item.place_name,
+                                        address : item.road_address_name ? item.road_address_name: item.address_name
+                                    }]})// 추가한 결과 배열에 넣기
+                                console.log(addPlace);
                                 }}><BsPlus /></span>
                         </div>
                         {/* 장소 주소 */}
@@ -156,9 +244,9 @@ function KakaoMap({ searchPlace }) {
                 {(add == true) && (button == true)  ? (<div className='MyPlanPlace'>
 
                     {addPlace.filter(addPlace => addPlace.num == DayButton).map((item, i) => (
-                    <div key={DayButton + i} className='MyPlanPlace-list'>
+                    <div key={i} className='MyPlanPlace-list'>
                         <div style={{display:'flex', margin:'5px'}}>
-                            <h4 style={{marginRight:'15px', fontFamily:'Roboto Bold', fontWeight:'700'}}>{item.place.place_name}</h4>
+                            <h4 style={{marginRight:'15px', fontFamily:'Roboto Bold', fontWeight:'700'}}>{item.desNm}</h4>
                             <span style={{marginLeft : 'auto'}} onClick={() => {
                                 let copy = [...addPlace] // addPlace배열 카피본 만들기
                                 let copy2 = copy.filter(addPlace => addPlace.num == DayButton); // 필터링한 카피본 만들기(일차에 해당하는 여행지만)
@@ -171,11 +259,7 @@ function KakaoMap({ searchPlace }) {
                             }}><BiMinus /></span>
                         </div>
                         <div style={{fontFamily:'Roboto Regular', fontWeight:'400', fontSize:'13px', margin:'10px 5px', textAlign:'left'}}>
-                            {item.place.road_address_name ? (
-                            <p >{item.place.road_address_name}</p>
-                            ) : (
-                            <p >{item.place.address_name}</p>
-                            )}
+                            <p>{item.address}</p>
                         </div>
                     </div>))}
                 </div>) : (null)}  
@@ -190,11 +274,12 @@ function KakaoMap({ searchPlace }) {
             {button &&( <div className='PlanOpenButton'>
                 {/*일정 저장 버튼*/}
                 
-                <div className='MyPlanSave' onClick={() =>{dispatch(setChosenPlace(addPlace)); navigate('/MyPage')}}>일정 저장</div> 
+                <div className='MyPlanSave' onClick={()=>{savePlan(); navigate('/myPage')}}>일정 저장</div> 
                 
 
                 {/*내 일정 닫기 버튼*/}
                 <div className='MyPlanButtonClose' onClick={() => {setButton(false)}} >내 일정</div>
+
             </div>)}
         </div>
         
