@@ -72,7 +72,7 @@ let chosenPlace = createSlice({
   reducers : {
     setChosenPlace(state, action) {
       //console.log(action.payload)
-      return [...state, action.payload]
+      return action.payload
     }
   }
 })
