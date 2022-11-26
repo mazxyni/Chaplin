@@ -59,7 +59,7 @@ let schedule = createSlice({
   reducers : {
     setSchedule(state, action) {
       //console.log(action.payload)
-      return action.payload
+      return [...state, action.payload]
     }
   }
 })
@@ -72,7 +72,7 @@ let chosenPlace = createSlice({
   reducers : {
     setChosenPlace(state, action) {
       //console.log(action.payload)
-      return action.payload
+      return [...state, action.payload]
     }
   }
 })

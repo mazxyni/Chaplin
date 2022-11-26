@@ -8,6 +8,7 @@ import { FaSearch } from "react-icons/fa";
 import {BiMinus} from 'react-icons/bi';
 import "./Plan.css";
 import "./Schedule_PC.css";
+import axios from "axios";
 
 const { kakao } = window;
 
@@ -86,8 +87,10 @@ function Plan()  {
   const [dateButton, setDateButton] = useState(false); // 날짜 선택 버튼
   const [regionButton, setRegionButton] = useState(false); // 지역 선택 버튼
 
+  const [usrPlan, setUsrPlan] = useState([]);
   const [addPlace, setAddPlace] = useState([]);
   const [DayButton, setDayButton] = useState(0); // 일차 배열 값 위치, 기본값 0번째
+  const [plnSq, setPlnSq] = useState(0);
   
   const selectStartDate = useSelector((state) => state.chosenStartDate); // 시작 날짜
   const selectEndDate = useSelector((state) => state.chosenEndDate); // 끝 날짜
@@ -96,6 +99,9 @@ function Plan()  {
   const chosenCity = useSelector((state) => state.region.City)
 
   console.log(addPlace)
+  console.log(usrPlan);
+
+  
 
   const onChange = (e) => {
     setInputText(e.target.value);
@@ -123,6 +129,27 @@ function Plan()  {
     pagination.nextPage();
     
   }
+
+  useEffect(() => {
+
+    if (selectEndDate) {
+    setUsrPlan({
+        usrId : 'chaplinuser' ,
+        metropolitan : chosenMetro,
+        city: chosenCity,
+        plnSDd: selectStartDate,
+        plnFDd: selectEndDate
+    });
+    }else{
+        setUsrPlan({
+            usrId : 'chaplinuser' ,
+            metropolitan : chosenMetro,
+            city: chosenCity,
+            plnSDd: selectStartDate
+        });
+    }
+
+  }, [selectStartDate, selectEndDate, chosenMetro, chosenCity])
 
 
   // 지도
@@ -193,6 +220,24 @@ function Plan()  {
 
   }, [searchPlace, chosenMetro, chosenCity]); // searchPlace 바뀔 때 마다 랜더링 
 
+  function savePlan() {
+    axios.post('/api/pln', usrPlan).then((response) => {
+        console.log(response.data);
+
+        setPlnSq(response.data); // planNum에 저장한 일정의 일정번호 넣기
+
+        axios.post('/api/pln', addPlace).then((response2) => {
+            console.log(response2.data);
+        }).catch(function(error) {
+            console.log(error);
+        });
+        
+    }).catch(function(error) {
+        console.log(error);
+    });
+    
+  }
+
 
   return (
     
@@ -239,7 +284,7 @@ function Plan()  {
                         {addPlace[j].num == i ? (
                         <div className='MyPlace-list' style={{color:'black',fontSize:'16px'}}>
                           <div style={{display:'flex', margin:'5px'}}>
-                            <h4 style={{marginRight:'16px', fontWeight:'700'}}>{item2.place.place_name}</h4>
+                            <h4 style={{marginRight:'16px', fontWeight:'700'}}>{item2.desNm}</h4>
                             <span style={{marginLeft : 'auto'}} onClick={() => {
                                 let copy = [...addPlace] // addPlace배열 카피본 만들기
                                 copy.splice(j,1); // 선택한 i번째 목적지 삭제하기
@@ -249,11 +294,7 @@ function Plan()  {
                         </div>
                         {console.log(item2)}
                         <div style={{fontWeight:'400', fontSize:'14px', margin:'10px 5px', textAlign:'left'}}>
-                            {item2.place.road_address_name ? (
-                            <div className="list_address">{item2.place.road_address_name}</div>
-                            ) : (
-                              <div className="list_address">{item2.place.address_name}</div>
-                            )}
+                            {item2.address}
                         </div>
 
                     </div>):(null)}
@@ -265,7 +306,7 @@ function Plan()  {
             </div>
 
             {/* 일정 생성 버튼 */}
-            <div className="btnsaveplan">일정 생성하기</div>
+            <div className="btnsaveplan" onClick={savePlan()}>일정 생성하기</div>
           
           </div>
         </div>
@@ -312,7 +353,18 @@ function Plan()  {
                       )}
                       <button className="addplanbtn" onClick={() => {
                         if (selectStartDate != null ) { // 날짜를 선택 했을 때
-                          setAddPlace(() => {return[...addPlace, {num: DayButton, place: item}]})// 추가한 결과 배열에 넣기
+                          setAddPlace(() => {return[...addPlace, 
+                            {
+                                num : DayButton,
+                                plnSq : plnSq,
+                                metropolitan : chosenMetro,
+                                city : chosenCity,
+                                desDd : chosenDateArray[DayButton],
+                                desLat : item.y,
+                                desLong : item.x,
+                                desNm : item.place_name,
+                                address : item.road_address_name ? item.road_address_name: item.address_name
+                            }]})// 추가한 결과 배열에 넣기
                         }else{// 날짜를 선택 안했을 때
                         }
                       }}>

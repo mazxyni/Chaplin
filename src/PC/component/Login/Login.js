@@ -33,7 +33,9 @@ function Login() {
         setIsLogin(e.target.cheked);
     }
 
-    const onSubmitHandler = () => {
+    const onSubmitHandler = (e) => {
+        e.preventDefault();
+        
         if(isId) {
             alert('아이디를 입력하세요.');
         }

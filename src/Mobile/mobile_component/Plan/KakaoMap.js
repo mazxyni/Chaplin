@@ -34,15 +34,10 @@ function KakaoMap({ searchPlace }) {
     //console.log(chosenDateArray[DayButton])
     console.log(usrPlan);
     console.log(addPlace);
-    const usr = 1;
-    let planNum = 0;
-
-    let plan = [{plnSq: 1, user: usr, metropolitan:chosenMetro, city:chosenCity, planNm:'', plnSDd:chosenStartDate, plnFDd:chosenEndDate},
-    {plnSq: 2, user: usr, metropolitan:'제주특별자치도', city:'서귀포시', planNm:'', plnSDd:'2023-1-1', plnFDd:'2023-1-3'}];
-    //let plan = null;
+    
     
 
-     useEffect(() => {
+    // useEffect(() => {
     //     axios.get('/api/pln', {
     //         usrId : 'chaplinuser'
     //     }).then((response) => {
@@ -53,17 +48,7 @@ function KakaoMap({ searchPlace }) {
     //     }).catch((error) => {
     //         console.log(error);
     //     })
-        console.log(plan);
-        if (plan) {
-            console.log(plan.at(-1).plnSq);
-            planNum = plan.at(-1).plnSq + 1;
-            console.log(planNum);
-            // planNum += 1;
-        }else {
-            planNum = 1;
-            console.log(planNum);
-        }
-     },[])
+    //  },[])
 
 
     useEffect(() => {
@@ -135,39 +120,41 @@ function KakaoMap({ searchPlace }) {
     useEffect(() => {
 
         if (chosenEndDate) {
-        setUsrPlan(() => {return[...usrPlan ,{
-            plnSq : planNum,
+        setUsrPlan({
             usrId : 'chaplinuser' ,
             metropolitan : chosenMetro,
             city: chosenCity,
             plnSDd: chosenStartDate,
             plnFDd: chosenEndDate
-        }]});
+        });
         }else{
-            setUsrPlan(() => {return[...usrPlan ,{
-                plnSq : planNum,
+            setUsrPlan({
                 usrId : 'chaplinuser' ,
                 metropolitan : chosenMetro,
                 city: chosenCity,
                 plnSDd: chosenStartDate
-            }]});
+            });
         }
 
     }, [chosenStartDate, chosenEndDate, chosenMetro, chosenCity])
 
 
     function savePlan() {
-        // axios.post('/api/pln', usrPlan).then((response) => {
-        //     console.log(response.data);
-            
-        // }).catch(function(error) {
-        //     console.log(error);
-        // });
-        dispatch(setSchedule(usrPlan));
-        dispatch(setChosenPlace(addPlace));
-        
-        
+        axios.post('/api/pln', usrPlan).then((response) => {
+            console.log(response.data);
 
+            setPlnSq(response.data); // planNum에 저장한 일정의 일정번호 넣기
+
+            axios.post('/api/pln', addPlace).then((response2) => {
+                console.log(response2.data);
+            }).catch(function(error) {
+                console.log(error);
+            });
+            
+        }).catch(function(error) {
+            console.log(error);
+        });
+        
     }
     
 
@@ -202,7 +189,7 @@ function KakaoMap({ searchPlace }) {
                                 setAddPlace(() => {return[...addPlace, 
                                     {
                                         num : DayButton,
-                                        plnSq : planNum,
+                                        plnSq : plnSq,
                                         metropolitan : chosenMetro,
                                         city : chosenCity,
                                         desDd : chosenDateArray[DayButton],
