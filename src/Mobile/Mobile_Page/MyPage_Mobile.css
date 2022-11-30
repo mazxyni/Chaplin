@@ -1,19 +1,20 @@
 @import '../../Reset.css';
 
 /* 프로필 사진 */
-.profile-img_mb {
+.profile_mb {
     width:35px;
     height:35px;
-    background-color:#000;
-    margin-left:45.4%;
+    margin-left:43.2%;
     margin-top:50px;
 }
 
 /* 프로필 수정 버튼 */
 .profileModifyButton_mb {
-    margin-left: 173px;
-    margin-top:20px;
+    margin-left:39%;
+    margin-top:30px;
     margin-bottom:30px;
+    padding: 5px 10px;
+    border: 2px solid #C1C1C1;
 }
 
 /* 내 여행 */
@@ -28,6 +29,7 @@
     margin-bottom:30px;
 }
 
+
 /* 내 일정계획 */
 .MyPagePlan_mb {
     width: 100%;
@@ -39,7 +41,7 @@
 /* 내 일정계획 리스트 */
 .MyPagePlanList_mb {
     width: 84%;
-    height: 20%;
+    height: 150px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 5%;
     margin-left: 8%;
@@ -48,36 +50,43 @@
 
 /* 일정계획 이미지 */
 .MyPagePlanImg_mb{
-    width: 31.7%;
-    height: 100px;
-    background-color: cornflowerblue;
+    width: 100px;
+    height: 120px;
+    background-color: #C1C1C1;
     margin: 15px;
 }
 
 
 .MyPagePlantext_mb{
-    width: 46%;
+    width: 70%;
     margin-top: 15px;
     text-align: left;
 }
 
 /* 일정 날짜 */
 .MyPagePlanDate_mb{
-    font-size: 13px;
-    margin-bottom: 20%;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 /* 일정 수정버튼 */
 .MyPagePlanModify_mb{
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 /* 일정 확인 버튼 */
 .MyPagePlanCheck_mb{
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-/* 일정 내보내기 버튼 */
-.MyPagePlanOut_mb{
-    font-size: 12px;
+/* 일정 삭제 버튼 */
+.MyPagePlanDelete_mb{
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }

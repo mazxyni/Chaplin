@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import '../Mobile_Page/MyPage_Mobile.css'
 import dayjs from 'dayjs';
 import Place from "../mobile_component/MyPage/Place";
+import {BsPersonCircle} from 'react-icons/bs'
 
 function MyPage() {
     const chosenStartDate = useSelector((state) => dayjs(state.chosenStartDate).format('YYYY/MM/DD'))
@@ -23,12 +24,10 @@ function MyPage() {
         <div className="MyPage_mb">
             {modal ? <Place setModal = {setModal}/> : null}
 
-            <Header />
             
             {/* 프로필 */}
-            <div className="profile_mb">
-                <div className="profile-img_mb">
-                </div>
+            <div className="profile_mb" >
+                <BsPersonCircle size={50} />
 
             </div>
 
@@ -44,18 +43,21 @@ function MyPage() {
                 
                 {usrPlan.map((item, i) => (
                 <div key = {i} className="MyPagePlanList_mb">
-                        <div className="MyPagePlanImg_mb">이미지</div>
+                        <div className="MyPagePlanImg_mb">{usrPlan[i].metropolitan}</div>
 
                         <div className="MyPagePlantext_mb">
-                            <div className="MyPagePlanDate_mb">{chosenStartDate +'~'+ chosenEndDate}</div>
+                            {usrPlan[i].plnFDd ?  (<div className="MyPagePlanDate_mb">{usrPlan[i].plnSDd +' ~ '+ usrPlan[i].plnFDd}</div>):(
+                                    usrPlan[i].plnSDd ? (<div className="MyPagePlanDate_mb">{usrPlan[i].plnSDd}</div>) : (null))}
+                        
                             <div className="MyPagePlanModify_mb">일정 수정</div>
                             <div className="MyPagePlanCheck_mb" onClick={()=>{setModal(!modal);}}>일정표 확인</div>
-                            <div className="MyPagePlanOut_mb">일정표 내보내기</div>
+                            <div className="MyPagePlanDelete_mb">일정 삭제</div>
                         </div>
-                </div>))}
-            </div>            
+                </div>
+                ))}
+            </div>   
+                              
 
-            <Footer />
 
         
         </div>
